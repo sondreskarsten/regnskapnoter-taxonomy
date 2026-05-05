@@ -98,27 +98,29 @@ def emit(input_dir: Path, output: Path) -> int:
         for ann in data.get("annotations", []):
             rows.append(_wadm_record(orgnr, year, pdf_uri, ann))
 
-    schema = pa.schema([
-        ("annotation_id", pa.string()),
-        ("orgnr", pa.string()),
-        ("fiscal_year", pa.int32()),
-        ("concept_id", pa.string()),
-        ("value_numeric", pa.float64()),
-        ("value_text", pa.string()),
-        ("source_pdf_uri", pa.string()),
-        ("page", pa.int32()),
-        ("text_quote", pa.string()),
-        ("text_quote_prefix", pa.string()),
-        ("text_quote_suffix", pa.string()),
-        ("text_position_start", pa.int64()),
-        ("text_position_end", pa.int64()),
-        ("media_fragment", pa.string()),
-        ("motivation", pa.string()),
-        ("target_iri", pa.string()),
-        ("extraction_method", pa.string()),
-        ("extraction_confidence", pa.float64()),
-        ("created", pa.string()),
-    ])
+    schema = pa.schema(
+        [
+            ("annotation_id", pa.string()),
+            ("orgnr", pa.string()),
+            ("fiscal_year", pa.int32()),
+            ("concept_id", pa.string()),
+            ("value_numeric", pa.float64()),
+            ("value_text", pa.string()),
+            ("source_pdf_uri", pa.string()),
+            ("page", pa.int32()),
+            ("text_quote", pa.string()),
+            ("text_quote_prefix", pa.string()),
+            ("text_quote_suffix", pa.string()),
+            ("text_position_start", pa.int64()),
+            ("text_position_end", pa.int64()),
+            ("media_fragment", pa.string()),
+            ("motivation", pa.string()),
+            ("target_iri", pa.string()),
+            ("extraction_method", pa.string()),
+            ("extraction_confidence", pa.float64()),
+            ("created", pa.string()),
+        ]
+    )
     if not rows:
         empty = {f.name: [] for f in schema}
         table = pa.table(empty, schema=schema)
@@ -133,10 +135,10 @@ def emit(input_dir: Path, output: Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Emit WADM annotations parquet.")
-    parser.add_argument("--input-dir", type=Path, required=True,
-                        help="Directory of per-document extraction JSON files")
-    parser.add_argument("--output", type=Path,
-                        default=ARTIFACTS / "annotations.parquet")
+    parser.add_argument(
+        "--input-dir", type=Path, required=True, help="Directory of per-document extraction JSON files"
+    )
+    parser.add_argument("--output", type=Path, default=ARTIFACTS / "annotations.parquet")
     args = parser.parse_args()
     if not args.input_dir.exists():
         print(f"MISSING input-dir: {args.input_dir}", file=sys.stderr)
