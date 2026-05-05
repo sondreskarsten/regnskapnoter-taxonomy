@@ -1,0 +1,17 @@
+Loading finstat sample (n_firms_per_year ≈ 19)...
+  observations: 95
+calc arc balance: 314/373 = 84.2%
+
+First 10 failures:
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=950198168.0, year=2018): observed=88448, computed=97188, diff=0.0899
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=812750062.0, year=2018): observed=154258, computed=132062, diff=0.1439
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=812750062.0, year=2018): observed=161047, computed=118707, diff=0.2629
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=950198168.0, year=2019): observed=58100, computed=33604, diff=0.4216
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=812750062.0, year=2019): observed=115804, computed=-976, diff=1.0084
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=812750062.0, year=2019): observed=127764, computed=10984, diff=0.9140
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=950198168.0, year=2020): observed=68279, computed=26985, diff=0.6048
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=812750062.0, year=2020): observed=159257, computed=346753, diff=0.5407
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=812750062.0, year=2020): observed=163840, computed=351336, diff=0.5337
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=950198168.0, year=2021): observed=53794, computed=105470, diff=0.4900
+
+PASS (84.2% >= 80%)

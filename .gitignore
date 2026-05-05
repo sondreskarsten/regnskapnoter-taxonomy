@@ -16,6 +16,8 @@ build/
 !build/__init__.py
 !build/generators/
 !build/generators/*.py
+!build/validators/
+!build/validators/*.py
 .coverage
 htmlcov/
 .DS_Store
