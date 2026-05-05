@@ -18,10 +18,15 @@ labels:
     text: "Name of associated company"
 
 references:
+  - publisher: NRS
+    document: Investering i tilknyttet selskap og deltakelse i FKV
+    paragraph: "kap. 4"
+    applicable_from_fiscal_year: 2007
   - publisher: Stortinget
     document: regnskapsloven
     paragraph: "§ 7-44"
     applicable_from_fiscal_year: 1999
+    applicable_to_fiscal_year: 2020
 
 definitions:
   - lang: nb
@@ -31,6 +36,7 @@ definitions:
     source_document: regnskapsloven
     source_paragraph: "§ 7-44"
     applicable_from_fiscal_year: 1999
+    applicable_to_fiscal_year: 2020
     authoritative: true
 
 mappings:

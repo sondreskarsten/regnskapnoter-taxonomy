@@ -17,10 +17,15 @@ labels:
     text: "Subsidiary - registered office"
 
 references:
+  - publisher: NRS
+    document: NRS 17
+    paragraph: "kap. 6"
+    applicable_from_fiscal_year: 2018
   - publisher: Stortinget
     document: regnskapsloven
     paragraph: "§ 7-44"
     applicable_from_fiscal_year: 1999
+    applicable_to_fiscal_year: 2020
 definitions:
   - lang: nb
     role: definition
@@ -29,6 +34,7 @@ definitions:
     source_document: regnskapsloven
     source_paragraph: "§ 7-44"
     applicable_from_fiscal_year: 1999
+    applicable_to_fiscal_year: 2020
     authoritative: true
 
 mappings:
