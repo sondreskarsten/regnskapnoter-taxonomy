@@ -43,7 +43,9 @@ def main() -> int:
             errors.append(f"BUILD_TABLES: {r['table']}.{r['column']} references unknown axis_id '{axis}'")
         member = r.get("axis_member", "")
         if member and member not in members:
-            errors.append(f"BUILD_TABLES: {r['table']}.{r['column']} references unknown axis_member '{member}'")
+            errors.append(
+                f"BUILD_TABLES: {r['table']}.{r['column']} references unknown axis_member '{member}'"
+            )
 
     if errors:
         for e in errors:
@@ -52,7 +54,7 @@ def main() -> int:
         return 1
     total = len(rows)
     mapped = sum(1 for r in rows if r.get("concept_id"))
-    print(f"  build_tables mapping: {mapped}/{total} = {mapped/total:.0%}")
+    print(f"  build_tables mapping: {mapped}/{total} = {mapped / total:.0%}")
     return 0
 
 
