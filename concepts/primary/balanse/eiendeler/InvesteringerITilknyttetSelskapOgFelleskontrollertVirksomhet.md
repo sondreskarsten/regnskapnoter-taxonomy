@@ -1,0 +1,40 @@
+---
+concept_id: regnskap-no:InvesteringerITilknyttetSelskapOgFelleskontrollertVirksomhet
+namespace: regnskap-no
+period_type: instant
+balance: debit
+data_type: monetaryItemType
+substitution_group: item
+abstract: false
+status: standard
+introduced_version: 0.1.0
+
+labels:
+  - lang: nb
+    role: standardLabel
+    text: "Investeringer i tilknyttet selskap og felleskontrollert virksomhet"
+  - lang: en
+    role: standardLabel
+    text: "Investments in associates and joint ventures"
+
+references:
+  - publisher: Stortinget
+    document: regnskapsloven
+    paragraph: "§ 6-2 A III 4"
+    applicable_from_fiscal_year: 1999
+
+mappings:
+  - to: ifrs-full:InvestmentsInAssociatesAndJointVentures
+    relation: skos:closeMatch
+    quality: approximate
+    note: "regnskap-no aggregates TS+FKV; IFRS distinguishes associates (IAS 28) from JV (IFRS 11)."
+parents:
+  - role: "[620000] Balanse"
+    parent: regnskap-no:FinansielleAnleggsmidler
+    weight: +1
+    order: 4
+---
+
+## Verbatim text (regnskapsloven § 6-2 A III 4)
+
+> Investeringer i tilknyttet selskap og felleskontrollert virksomhet

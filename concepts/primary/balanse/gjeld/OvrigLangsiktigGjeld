@@ -1,0 +1,40 @@
+---
+concept_id: regnskap-no:OvrigLangsiktigGjeld
+namespace: regnskap-no
+period_type: instant
+balance: credit
+data_type: monetaryItemType
+substitution_group: item
+abstract: false
+status: standard
+introduced_version: 0.1.0
+
+labels:
+  - lang: nb
+    role: standardLabel
+    text: "Øvrig langsiktig gjeld"
+  - lang: en
+    role: standardLabel
+    text: "Other non-current debt"
+
+references:
+  - publisher: Stortinget
+    document: regnskapsloven
+    paragraph: "§ 6-2"
+    applicable_from_fiscal_year: 1999
+
+mappings:
+  - to: ifrs-full:OtherNoncurrentLiabilities
+    relation: skos:closeMatch
+    quality: approximate
+
+parents:
+  - role: "[620000] Balanse"
+    parent: regnskap-no:AnnenLangsiktigGjeld
+    weight: +1
+    order: 4
+---
+
+## Verbatim text (regnskapsloven § 6-2)
+
+> Øvrig langsiktig gjeld

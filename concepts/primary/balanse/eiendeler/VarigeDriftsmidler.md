@@ -1,0 +1,40 @@
+---
+concept_id: regnskap-no:VarigeDriftsmidler
+namespace: regnskap-no
+period_type: instant
+balance: debit
+data_type: monetaryItemType
+substitution_group: item
+abstract: false
+status: standard
+introduced_version: 0.1.0
+
+labels:
+  - lang: nb
+    role: standardLabel
+    text: "Varige driftsmidler"
+  - lang: en
+    role: standardLabel
+    text: "Property, plant and equipment"
+
+references:
+  - publisher: Stortinget
+    document: regnskapsloven
+    paragraph: "§ 6-2 A II"
+    applicable_from_fiscal_year: 1999
+
+mappings:
+  - to: ifrs-full:PropertyPlantAndEquipment
+    relation: skos:closeMatch
+    quality: approximate
+    note: "Includes biological assets carried at cost under regnskap-no; IFRS-Full separates these to ifrs-full:BiologicalAssets."
+parents:
+  - role: "[620000] Balanse"
+    parent: regnskap-no:Anleggsmidler
+    weight: +1
+    order: 2
+---
+
+## Verbatim text (regnskapsloven § 6-2 A II)
+
+> Varige driftsmidler

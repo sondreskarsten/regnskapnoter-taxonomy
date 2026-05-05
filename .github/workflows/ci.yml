@@ -42,8 +42,8 @@ jobs:
 
       - name: Build Turtle and JSON-LD
         run: |
-          python -m build.build_turtle --version "0.0.0-ci"
-          python -m build.build_jsonld --version "0.0.0-ci"
+          python -m build.build_turtle
+          python -m build.build_jsonld
 
       - name: SHACL validation
         run: python -m build.validate_shacl

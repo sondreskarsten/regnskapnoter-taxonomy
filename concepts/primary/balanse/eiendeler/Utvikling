@@ -1,0 +1,41 @@
+---
+concept_id: regnskap-no:Utvikling
+namespace: regnskap-no
+period_type: instant
+balance: debit
+data_type: monetaryItemType
+substitution_group: item
+abstract: false
+status: standard
+introduced_version: 0.1.0
+
+labels:
+  - lang: nb
+    role: standardLabel
+    text: "Utvikling"
+  - lang: en
+    role: standardLabel
+    text: "Development"
+
+references:
+  - publisher: Stortinget
+    document: regnskapsloven
+    paragraph: "§ 6-2"
+    applicable_from_fiscal_year: 1999
+
+mappings:
+  - to: ifrs-full:OtherIntangibleAssets
+    relation: skos:closeMatch
+    quality: approximate
+    note: "Utvikling som balanseført FoU; ikke eget IFRS-Full konsept."
+
+parents:
+  - role: "[620000] Balanse"
+    parent: regnskap-no:ImmaterielleEiendeler
+    weight: +1
+    order: 1
+---
+
+## Verbatim text (regnskapsloven § 6-2)
+
+> Utvikling

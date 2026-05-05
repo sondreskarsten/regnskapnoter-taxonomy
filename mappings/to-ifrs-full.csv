@@ -1,0 +1,169 @@
+regnskap_no_id,subject_kind,ifrs_full_target,relation,quality,note
+regnskap-no:Notetekst,concept,ifrs-full:DisclosureOfNotesAndOtherExplanatoryInformationExplanatory,skos:closeMatch,approximate,Free-text noter container; IFRS uses extensible disclosure framework.
+regnskap-no:AvskrivningsmetodeBeskrivelse,concept,ifrs-full:DescriptionOfDepreciationMethodPropertyPlantAndEquipment,skos:closeMatch,approximate,Depreciation method narrative; IFRS uses IAS 16 explanatory disclosure.
+regnskap-no:InntektsforingsprinsippBeskrivelse,concept,ifrs-full:DescriptionOfAccountingPolicyForRecognitionOfRevenueExplanatory,skos:closeMatch,approximate,Revenue recognition policy text; IFRS uses IFRS 15 explanatory disclosure.
+regnskap-no:RegnskapsprinsipperBeskrivelse,concept,ifrs-full:DisclosureOfSummaryOfSignificantAccountingPoliciesExplanatory,skos:closeMatch,approximate,Free-text accounting policies disclosure; IFRS uses extensible disclosure framework.
+regnskap-no:ValutaomregningsprinsippBeskrivelse,concept,ifrs-full:DescriptionOfAccountingPolicyForFunctionalCurrencyTranslationDifferencesExplanatory,skos:closeMatch,approximate,Currency translation policy; IFRS uses IAS 21 explanatory disclosure.
+regnskap-no:KonsolideringsprinsippBeskrivelse,concept,ifrs-full:DescriptionOfAccountingPolicyForBusinessCombinationsExplanatory,skos:closeMatch,approximate,Consolidation principles; NRS 17 vs IFRS 3 / IFRS 10 differ on acquisition accounting and consolidation scope.
+regnskap-no:AntallAnsatte,concept,ifrs-full:NumberOfEmployees,skos:exactMatch,exact,
+regnskap-no:Arsverk,concept,ifrs-full:AverageNumberOfEmployees,skos:closeMatch,approximate,regnskapsloven uses årsverk (FTE); IFRS uses average number of employees.
+regnskap-no:Folketrygdavgift,concept,ifrs-full:SocialSecurityContributions,skos:exactMatch,exact,
+regnskap-no:Lonninger,concept,ifrs-full:WagesAndSalaries,skos:exactMatch,exact,
+regnskap-no:LonnskostnadAndreYtelser,concept,ifrs-full:OtherEmployeeExpense,skos:closeMatch,approximate,'Andre ytelser' aggregates fringe benefits and other employee costs; IFRS uses OtherEmployeeExpense at similar grain.
+regnskap-no:LonnskostnadPensjon,concept,ifrs-full:PostemploymentBenefitExpenseDefinedBenefitPlans,skos:closeMatch,approximate,NRS 6 pensjonskostnad covers both DB and DC; IFRS-Full splits.
+regnskap-no:AnleggsmiddelAkkumulerteAvskrivninger,concept,ifrs-full:PropertyPlantAndEquipmentAccumulatedDepreciationAndImpairment,skos:closeMatch,approximate,Norwegian disclosure separates accumulated depreciation per anleggsmiddel class; IFRS aggregates depreciation and impairment.
+regnskap-no:AnleggsmiddelAnskaffelseskost,concept,ifrs-full:PropertyPlantAndEquipmentGrossCarryingAmount,skos:closeMatch,approximate,Anskaffelseskost (historical cost basis) per regnskapsloven § 5-1; IFRS reports gross carrying amount.
+regnskap-no:AnleggsmiddelAretsAvgang,concept,ifrs-full:DisposalsPropertyPlantAndEquipment,skos:closeMatch,approximate,Year disposals of anleggsmidler; IFRS distinguishes disposals via business combinations.
+regnskap-no:AnleggsmiddelAretsAvskrivning,concept,ifrs-full:DepreciationPropertyPlantAndEquipment,skos:exactMatch,exact,
+regnskap-no:AnleggsmiddelAretsNedskrivning,concept,ifrs-full:ImpairmentLossRecognisedInProfitOrLossPropertyPlantAndEquipment,skos:exactMatch,exact,
+regnskap-no:AnleggsmiddelAretsTilgang,concept,ifrs-full:AdditionsOtherThanThroughBusinessCombinationsPropertyPlantAndEquipment,skos:closeMatch,approximate,Year additions of anleggsmidler; IFRS distinguishes additions via business combinations.
+regnskap-no:AnleggsmiddelBalansefortVerdi,concept,ifrs-full:PropertyPlantAndEquipment,skos:closeMatch,approximate,Balanseført verdi (carrying amount) of anleggsmiddel; IFRS uses PropertyPlantAndEquipment at similar grain.
+regnskap-no:AnleggsmiddelOkonomiskLevetid,concept,ifrs-full:UsefulLifeMeasuredAsPeriodOfTimePropertyPlantAndEquipment,skos:closeMatch,approximate,Economic useful life used for depreciation; IFRS records as useful-life period (IAS 16.50).
+regnskap-no:FordringerKundefordringerInkluderendeAvsetning,concept,ifrs-full:TradeAndOtherCurrentReceivables,skos:closeMatch,approximate,Trade receivables including loss allowance; IFRS aggregates trade and other current receivables.
+regnskap-no:GarantiansvarTotaltBelop,concept,ifrs-full:ContingentLiabilitiesContingentLiabilityAtMeasurement,skos:closeMatch,approximate,NRS 13 financial guarantees; IFRS uses IAS 37 contingent liabilities.
+regnskap-no:Gjeld5arPlus,concept,ifrs-full:NoncurrentBorrowings,skos:closeMatch,approximate,Norwegian disclosure of debt with maturity > 5 years; IFRS uses contractual maturity analysis (IFRS 7).
+regnskap-no:AksjekapitalAntallAksjer,concept,ifrs-full:NumberOfSharesIssued,skos:exactMatch,exact,
+regnskap-no:AksjekapitalPalydendeVerdi,concept,ifrs-full:ParValuePerShare,skos:exactMatch,exact,
+regnskap-no:UtbyttePerAksje,concept,ifrs-full:DividendsPerShare,skos:exactMatch,exact,
+regnskap-no:UtbytteUtdelt,concept,ifrs-full:DividendsPaidClassifiedAsFinancingActivities,skos:closeMatch,approximate,Dividends paid in the period; IFRS classifies in cash flow statement.
+regnskap-no:DatterselskapEierandel,concept,ifrs-full:ProportionOfOwnershipInterestInSubsidiary,skos:exactMatch,exact,
+regnskap-no:DatterselskapForretningskontor,concept,ifrs-full:CountryOfIncorporationOfSubsidiary,skos:closeMatch,approximate,Norwegian disclosure includes registered office (forretningskontor); IFRS uses country of incorporation.
+regnskap-no:DatterselskapNavn,concept,ifrs-full:NameOfSubsidiary,skos:exactMatch,exact,
+regnskap-no:DatterselskapStemmeandel,concept,ifrs-full:ProportionOfVotingRightsHeldInSubsidiary,skos:exactMatch,exact,
+regnskap-no:TilknyttetSelskapEierandel,concept,ifrs-full:ProportionOfOwnershipInterestInAssociate,skos:exactMatch,exact,
+regnskap-no:TilknyttetSelskapNavn,concept,ifrs-full:NameOfAssociate,skos:exactMatch,exact,
+regnskap-no:GodtgjorelseDagligLeder,concept,ifrs-full:KeyManagementPersonnelCompensationShorttermEmployeeBenefits,skos:closeMatch,approximate,Total compensation to CEO; IFRS uses key-management-personnel disclosure with similar grain.
+regnskap-no:GodtgjorelseStyret,concept,ifrs-full:KeyManagementPersonnelCompensation,skos:closeMatch,approximate,Total compensation to board members; IFRS aggregates with key-management-personnel disclosure.
+regnskap-no:RevisorhonorarAndreTjenester,concept,ifrs-full:FeesForServicesOtherThanAudit,skos:closeMatch,approximate,Auditor fees for non-audit services; IFRS uses similar grain (FeesForServicesOtherThanAudit).
+regnskap-no:RevisorhonorarLovpalagt,concept,ifrs-full:FeesForAuditServices,skos:exactMatch,exact,
+regnskap-no:EgenkapitalRollforwardBelop,concept,ifrs-full:Equity,skos:closeMatch,approximate,Equity-rollforward fact dimensionalized by component (E) and movement (M); IFRS uses StatementOfChangesInEquity.
+regnskap-no:FortsattDriftBeskrivelse,concept,ifrs-full:DisclosureOfMaterialUncertaintiesThatMayCastSignificantDoubtOnEntitysAbilityToContinueAsGoingConcern,skos:closeMatch,approximate,Going-concern narrative; IFRS uses extensible disclosure under IAS 1.25.
+regnskap-no:FortsattDriftForutsetning,concept,ifrs-full:DisclosureOfMaterialUncertaintiesThatMayCastSignificantDoubtOnEntitysAbilityToContinueAsGoingConcern,skos:closeMatch,approximate,Boolean flag whether going-concern assumption is applied.
+regnskap-no:Aksjekapital,concept,ifrs-full:IssuedCapital,skos:exactMatch,exact,
+regnskap-no:AnnenEgenkapital,concept,ifrs-full:RetainedEarnings,skos:closeMatch,approximate,regnskap-no 'annen egenkapital' broadly equivalent to retained earnings; IFRS distinguishes reserves.
+regnskap-no:Egenkapital,concept,ifrs-full:Equity,skos:exactMatch,exact,
+regnskap-no:InnskuttEgenkapital,concept,ifrs-full:IssuedCapital,skos:closeMatch,approximate,Aggregation of share capital + share premium + other contributed equity.
+regnskap-no:OpptjentEgenkapital,concept,ifrs-full:RetainedEarnings,skos:closeMatch,approximate,Includes both retained earnings and 'annen egenkapital' under regnskap-no; IFRS-Full segregates by reserve type.
+regnskap-no:Overkurs,concept,ifrs-full:SharePremium,skos:exactMatch,exact,
+regnskap-no:UdekketTap,concept,ifrs-full:RetainedEarnings,skos:closeMatch,approximate,Negative retained earnings disclosed separately under regnskap-no with debit balance; IFRS aggregates as negative retained earnings.
+regnskap-no:AndreFordringer,concept,ifrs-full:NoncurrentReceivables,skos:closeMatch,approximate,Long-term other receivables; IFRS uses 12-month split.
+regnskap-no:AndreFordringerKortsiktig,concept,ifrs-full:OtherCurrentReceivables,skos:closeMatch,approximate,Other current receivables.
+regnskap-no:Anleggsmidler,concept,ifrs-full:NoncurrentAssets,skos:closeMatch,approximate,Norwegian 'anleggsmidler' is defined per regnskapsloven § 5-1 as 'eiendeler bestemt til varig eie eller bruk'; IFRS uses a 12-month operating-cycle test under IAS 1.66.
+regnskap-no:BankinnskuddKontanterOgLignende,concept,ifrs-full:CashAndCashEquivalents,skos:closeMatch,approximate,Substantially identical; minor scope differences in 'kontanter o.l.' vs IAS 7.6.
+regnskap-no:DriftslosoreInventarVerktoyKontormaskinerOgLignende,concept,ifrs-full:OfficeEquipmentNetOfAccumulatedDepreciationAndAmortisationAndImpairment,skos:closeMatch,approximate,Aggregation of moveable operating assets.
+regnskap-no:Eiendeler,concept,ifrs-full:Assets,skos:exactMatch,exact,
+regnskap-no:FinansielleAnleggsmidler,concept,ifrs-full:NoncurrentFinancialAssets,skos:closeMatch,approximate,Aggregation of long-term investments and receivables.
+regnskap-no:Fordringer,concept,ifrs-full:CurrentReceivables,skos:closeMatch,approximate,Aggregation of current receivables.
+regnskap-no:ForskningOgUtvikling,concept,ifrs-full:IntangibleAssetsAndGoodwill,skos:relatedMatch,approximate,Norwegian 'forskning og utvikling' line aggregates capitalized R&D; IFRS distinguishes development phase (IAS 38.57).
+regnskap-no:Goodwill,concept,ifrs-full:Goodwill,skos:exactMatch,exact,
+regnskap-no:ImmaterielleEiendeler,concept,ifrs-full:IntangibleAssetsOtherThanGoodwill,skos:closeMatch,approximate,Includes goodwill in regnskap-no decomposition; IFRS separates goodwill.
+regnskap-no:InvesteringerIDatterselskap,concept,ifrs-full:InvestmentsInSubsidiariesAccountedForUsingEquityMethod,skos:closeMatch,approximate,regnskap-no shows in separate financial statements at cost or equity; IFRS depends on consolidation status.
+regnskap-no:InvesteringerITilknyttetSelskapOgFelleskontrollertVirksomhet,concept,ifrs-full:InvestmentsInAssociatesAndJointVentures,skos:closeMatch,approximate,regnskap-no aggregates TS+FKV; IFRS distinguishes associates (IAS 28) from JV (IFRS 11).
+regnskap-no:InvesteringerOmlopsmidler,concept,ifrs-full:CurrentInvestments,skos:closeMatch,approximate,Short-term financial investments.
+regnskap-no:KonsesjonerPatenterLisenserVaremerker,concept,ifrs-full:LicencesAndFranchises,skos:closeMatch,approximate,IFRS-Full splits these across multiple line items; regnskap-no aggregates per regnskapsloven.
+regnskap-no:Kundefordringer,concept,ifrs-full:TradeAndOtherCurrentReceivables,skos:closeMatch,approximate,regnskap-no separates customer receivables; IFRS aggregates trade and other.
+regnskap-no:MarkedsbaserteAksjer,concept,ifrs-full:CurrentEquityInvestments,skos:closeMatch,approximate,Marketable short-term equity investments.
+regnskap-no:MaskinerOgAnlegg,concept,ifrs-full:MachineryNetOfAccumulatedDepreciationAndAmortisationAndImpairment,skos:closeMatch,approximate,Generic machinery aggregation.
+regnskap-no:Obligasjoner,concept,ifrs-full:NoncurrentInvestmentsInBonds,skos:closeMatch,approximate,Long-term bond investments classified as anleggsmiddel.
+regnskap-no:Omlopsmidler,concept,ifrs-full:CurrentAssets,skos:closeMatch,approximate,regnskapsloven § 5-1: 'andre eiendeler er omløpsmidler'.
+regnskap-no:Pensjonsmidler,concept,ifrs-full:NetDefinedBenefitAsset,skos:closeMatch,approximate,NRS 6 net pension asset; IFRS IAS 19 uses different actuarial assumptions.
+regnskap-no:TomterBygningerOgAnnenFastEiendom,concept,ifrs-full:LandAndBuildings,skos:closeMatch,approximate,regnskap-no aggregates land + buildings + other real property; IFRS-Full splits land vs buildings.
+regnskap-no:UtsattSkattefordel,concept,ifrs-full:DeferredTaxAssets,skos:exactMatch,exact,
+regnskap-no:Varer,concept,ifrs-full:Inventories,skos:exactMatch,exact,
+regnskap-no:VarigeDriftsmidler,concept,ifrs-full:PropertyPlantAndEquipment,skos:closeMatch,approximate,Includes biological assets carried at cost under regnskap-no; IFRS-Full separates these to ifrs-full:BiologicalAssets.
+regnskap-no:AndreAvsetningerForForpliktelser,concept,ifrs-full:OtherProvisions,skos:closeMatch,approximate,Other provisions; aggregation under NRS 13.
+regnskap-no:AndreLangsiktigeForpliktelser,concept,ifrs-full:OtherNoncurrentLiabilities,skos:closeMatch,approximate,Other non-current liabilities; aggregation.
+regnskap-no:AnnenKortsiktigGjeld,concept,ifrs-full:OtherCurrentPayables,skos:closeMatch,approximate,Other accrued and short-term liabilities.
+regnskap-no:AnnenLangsiktigGjeld,concept,ifrs-full:NoncurrentLiabilities,skos:closeMatch,approximate,Non-current liabilities other than provisions; aggregation differs from IFRS classification.
+regnskap-no:AvsetningForForpliktelser,concept,ifrs-full:Provisions,skos:closeMatch,approximate,Provisions per NRS 13; IFRS uses IAS 37 with similar definitions but different recognition tests.
+regnskap-no:BetalbarSkatt,concept,ifrs-full:CurrentTaxLiabilitiesCurrent,skos:exactMatch,exact,
+regnskap-no:Gjeld,concept,ifrs-full:Liabilities,skos:exactMatch,exact,
+regnskap-no:GjeldTilKredittinstitusjoner,concept,ifrs-full:NoncurrentBorrowings,skos:closeMatch,approximate,Bank loans and similar.
+regnskap-no:GjeldTilKredittinstitusjonerKortsiktig,concept,ifrs-full:CurrentBorrowings,skos:closeMatch,approximate,Short-term bank borrowings.
+regnskap-no:KonvertibleLan,concept,ifrs-full:NoncurrentConvertibleNotesPayable,skos:closeMatch,approximate,Convertible debt; IFRS may bifurcate equity component (IAS 32).
+regnskap-no:KonvertibleLanKortsiktig,concept,ifrs-full:CurrentConvertibleNotesPayable,skos:closeMatch,approximate,Short-term convertibles.
+regnskap-no:KortsiktigGjeld,concept,ifrs-full:CurrentLiabilities,skos:closeMatch,approximate,Aggregation of current liabilities.
+regnskap-no:Leverandorgjeld,concept,ifrs-full:TradeAndOtherCurrentPayablesToTradeSuppliers,skos:exactMatch,exact,
+regnskap-no:ObligasjonsLan,concept,ifrs-full:NoncurrentBorrowings,skos:closeMatch,approximate,Bond debt issued.
+regnskap-no:Pensjonsforpliktelser,concept,ifrs-full:NetDefinedBenefitLiability,skos:closeMatch,approximate,NRS 6 pension liability; IFRS IAS 19 uses different actuarial framework.
+regnskap-no:SertifikatLan,concept,ifrs-full:CurrentBorrowings,skos:closeMatch,approximate,Norwegian-specific short-term commercial paper instrument.
+regnskap-no:UtbytteForeslatt,concept,ifrs-full:DividendsPayable,skos:closeMatch,approximate,"Proposed dividend before AGM approval; under NGAAP recognized as liability per styrebehandling, IFRS recognizes only when declared."
+regnskap-no:UtsattSkatt,concept,ifrs-full:DeferredTaxLiabilities,skos:exactMatch,exact,
+regnskap-no:Aarsresultat,concept,ifrs-full:ProfitLoss,skos:exactMatch,exact,
+regnskap-no:AnnenDriftsinntekt,concept,ifrs-full:OtherIncome,skos:closeMatch,approximate,ifrs-full:OtherIncome har bredere scope; § 6-1 post 2 er driftsmessig 'annen' inntekt i tillegg til hovedsalg.
+regnskap-no:AnnenDriftskostnad,concept,ifrs-full:OtherExpenseByNature,skos:closeMatch,approximate,ifrs-full:OtherExpenseByNature er klassifisering etter art; § 6-1 post 9 er restposten i artsoppstillingen.
+regnskap-no:AnnenFinansinntekt,concept,ifrs-full:FinanceIncome,skos:closeMatch,approximate,"Norsk konseptet er post 14 (residual finansinntekt etter konserninterne renter, datter/tilknyttet utbytte, og andre investeringsinntekter)."
+regnskap-no:AnnenFinanskostnad,concept,ifrs-full:FinanceCosts,skos:closeMatch,approximate,Norsk konseptet er post 18 (residual finanskostnad etter konserninterne renter og nedskrivninger).
+regnskap-no:AvskrivningVarigeDriftsmidlerOgImmaterielleEiendeler,concept,ifrs-full:DepreciationAndAmortisationExpense,skos:exactMatch,exact,
+regnskap-no:Driftsresultat,concept,ifrs-full:ProfitLossFromOperatingActivities,skos:closeMatch,approximate,Norsk driftsresultat er definert som sum post 1-9; ifrs-full:ProfitLossFromOperatingActivities har samme rolle men IFRS' Operating-tema er ikke standardisert.
+regnskap-no:EndringBeholdningEgentilvirkedeAnleggsmidler,concept,ifrs-full:WorkPerformedByEntityAndCapitalised,skos:closeMatch,approximate,Norsk konseptet er en inntektsføring; IFRS-Full er en aktivering. Logisk sett er beløpene speilbilde av hverandre.
+regnskap-no:EndringBeholdningVarerUnderTilvirkningOgFerdigeVarer,concept,ifrs-full:ChangesInInventoriesOfFinishedGoodsAndWorkInProgress,skos:exactMatch,exact,
+regnskap-no:InntektInvesteringDatterselskapOgTilknyttetSelskap,concept,ifrs-full:ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod,skos:closeMatch,approximate,IFRS-Full splitter datterselskap (konsolidert) fra tilknyttet (egenkapitalmetoden); norsk konseptet aggregerer.
+regnskap-no:Lonnskostnad,concept,ifrs-full:EmployeeBenefitsExpense,skos:exactMatch,exact,
+regnskap-no:NedskrivningFinansielleEiendeler,concept,ifrs-full:ImpairmentLossOnFinancialAssets,skos:exactMatch,exact,
+regnskap-no:NedskrivningVarigeDriftsmidlerOgImmaterielleEiendeler,concept,ifrs-full:ImpairmentLossRecognisedInProfitOrLoss,skos:closeMatch,approximate,ifrs-full:ImpairmentLossRecognisedInProfitOrLoss er bredere; § 6-1 post 8 er begrenset til varige driftsmidler og immaterielle eiendeler.
+regnskap-no:RenteinntektForetakSammeKonsern,concept,ifrs-full:InterestIncomeOnLoansAndReceivables,skos:closeMatch,approximate,Konsern-spesifikk underpost; mappes løst til generell renteinntekt.
+regnskap-no:RentekostnadForetakSammeKonsern,concept,ifrs-full:InterestExpense,skos:closeMatch,approximate,Konsern-spesifikk underpost; mappes løst til generell rentekostnad.
+regnskap-no:ResultatForSkattekostnad,concept,ifrs-full:ProfitLossBeforeTax,skos:exactMatch,exact,
+regnskap-no:Resultatregnskap,concept,ifrs-full:IncomeStatementAbstract,skos:closeMatch,approximate,Norsk resultatregnskap i § 6-1 / § 6-1a følger en oppstillingsplan; IFRS-Full ifrs-full:IncomeStatementAbstract er et abstrakt grupperingskonsept uten en obligatorisk oppstillingsplan.
+regnskap-no:Salgsinntekt,concept,ifrs-full:Revenue,skos:closeMatch,approximate,ifrs-full:Revenue under IFRS 15 includes contract-asset and variable-consideration adjustments; regnskapsloven § 6-1 post 1 is 'inntekt fra salg av varer og tjenester' uten tilsvarende differensiering.
+regnskap-no:Skattekostnad,concept,ifrs-full:IncomeTaxExpenseContinuingOperations,skos:exactMatch,exact,
+regnskap-no:SumDriftsinntekter,concept,ifrs-full:Revenue,skos:closeMatch,approximate,Sum av § 6-1 post 1 og post 2; ifrs-full:Revenue dekker primært post 1 men er ofte brukt for samlet driftsinntekt i konsolidert IFRS-rapportering.
+regnskap-no:Varekostnad,concept,ifrs-full:RawMaterialsAndConsumablesUsed,skos:closeMatch,approximate,Norsk varekostnad inkluderer både innkjøpte varer og rå- og hjelpestoffer; mappes til IFRS-Full RawMaterialsAndConsumablesUsed med mindre granularitet.
+regnskap-no:VerdiendringFinansielleInstrumenterTilVirkeligVerdi,concept,ifrs-full:GainsLossesOnFinancialAssetsAtFairValueThroughProfitOrLoss,skos:closeMatch,approximate,ifrs-full har separate konsepter for FA og FL; § 6-1 post 15 aggregerer.
+regnskap-no:AarsresultatFunksjon,concept,ifrs-full:ProfitLoss,skos:exactMatch,exact,
+regnskap-no:AdministrativeKostnader,concept,ifrs-full:AdministrativeExpense,skos:exactMatch,exact,
+regnskap-no:AnnenFinansinntektFunksjon,concept,ifrs-full:FinanceIncome,skos:closeMatch,approximate,Samme begrep som § 6-1 post 14.
+regnskap-no:AnnenFinanskostnadFunksjon,concept,ifrs-full:FinanceCosts,skos:closeMatch,approximate,Samme begrep som § 6-1 post 18.
+regnskap-no:BruttoresultatFunksjon,concept,ifrs-full:GrossProfit,skos:exactMatch,exact,
+regnskap-no:Distribusjonskostnader,concept,ifrs-full:DistributionCosts,skos:exactMatch,exact,
+regnskap-no:DriftsresultatFunksjon,concept,ifrs-full:ProfitLossFromOperatingActivities,skos:closeMatch,approximate,"Samme begrep som § 6-1 post 10, men summert i funksjonsoppstillingen."
+regnskap-no:InntektInvesteringDatterselskapOgTilknyttetSelskapFunksjon,concept,ifrs-full:ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod,skos:closeMatch,approximate,Samme begrep som § 6-1 post 11.
+regnskap-no:KostnadSolgteVarer,concept,ifrs-full:CostOfSales,skos:exactMatch,exact,
+regnskap-no:RenteinntektForetakSammeKonsernFunksjon,concept,ifrs-full:InterestIncomeOnLoansAndReceivables,skos:closeMatch,approximate,Samme begrep som § 6-1 post 13.
+regnskap-no:RentekostnadForetakSammeKonsernFunksjon,concept,ifrs-full:InterestExpense,skos:closeMatch,approximate,Samme begrep som § 6-1 post 17.
+regnskap-no:ResultatForSkattekostnadFunksjon,concept,ifrs-full:ProfitLossBeforeTax,skos:exactMatch,exact,
+regnskap-no:SalgsinntektFunksjon,concept,ifrs-full:Revenue,skos:closeMatch,approximate,Samme begrep som § 6-1 (1) post 1 men i funksjonsoppstillingen.
+regnskap-no:SkattekostnadFunksjon,concept,ifrs-full:IncomeTaxExpenseContinuingOperations,skos:exactMatch,exact,
+regnskap-no:VerdiendringFinansielleInstrumenterTilVirkeligVerdiFunksjon,concept,ifrs-full:GainsLossesOnFinancialAssetsAtFairValueThroughProfitOrLoss,skos:closeMatch,approximate,Samme begrep som § 6-1 post 15.
+regnskap-no:AnleggsmidlerEndringAxis,axis,ifrs-full:CarryingAmountAccumulatedDepreciationAmortisationAndImpairmentAndGrossCarryingAmountAxis,skos:closeMatch,,
+regnskap-no:AnskaffelseskostInngaendeMember,member,ifrs-full:GrossCarryingAmountMember,skos:closeMatch,,
+regnskap-no:TilgangMember,member,ifrs-full:IncreaseDecreaseThroughAdditionsPropertyPlantAndEquipmentMember,skos:closeMatch,,
+regnskap-no:AvgangMember,member,ifrs-full:DisposalsPropertyPlantAndEquipmentMember,skos:closeMatch,,
+regnskap-no:AkkumulerteAvskrivningerInngaendeMember,member,ifrs-full:AccumulatedDepreciationAmortisationAndImpairmentMember,skos:closeMatch,,
+regnskap-no:BalansefortVerdiUtgaendeMember,member,ifrs-full:CarryingAmountMember,skos:closeMatch,,
+regnskap-no:EgenkapitalEndringAxis,axis,ifrs-full:ChangesInEquityAxis,skos:closeMatch,,
+regnskap-no:InngaendeBalanseMember,member,ifrs-full:PreviouslyStatedMember,skos:closeMatch,,
+regnskap-no:KapitalforhoyelseMember,member,ifrs-full:IncreaseDecreaseThroughIssueOfEquityMember,skos:closeMatch,,
+regnskap-no:UtbytteUtdeltMember,member,ifrs-full:IncreaseDecreaseThroughDividendsRecognisedAsDistributionsToOwnersMember,skos:exactMatch,,
+regnskap-no:AarsresultatAndelMember,member,ifrs-full:IncreaseDecreaseThroughComprehensiveIncomeMember,skos:closeMatch,,
+regnskap-no:AndreEndringerMember,member,ifrs-full:OtherChangesInEquityMember,skos:closeMatch,,
+regnskap-no:EgenkapitalKomponentAxis,axis,ifrs-full:ComponentsOfEquityAxis,skos:closeMatch,,
+regnskap-no:AksjekapitalMember,member,ifrs-full:IssuedCapitalMember,skos:exactMatch,,
+regnskap-no:OvkursMember,member,ifrs-full:SharePremiumMember,skos:exactMatch,,
+regnskap-no:AnnenEgenkapitalMember,member,ifrs-full:RetainedEarningsMember,skos:closeMatch,,Norwegian 'annen egenkapital' includes retained earnings and other unspecified equity.
+regnskap-no:UdekketTapMember,member,ifrs-full:RetainedEarningsMember,skos:closeMatch,,Negative retained earnings disclosed separately under regnskapsloven § 6-2 C II.
+regnskap-no:KlassifiseringAvAnleggsmidlerAxis,axis,ifrs-full:ClassesOfPropertyPlantAndEquipmentAxis,skos:broadMatch,,"regnskap-no axis covers all anleggsmidler classes (intangible, tangible, financial); IFRS axis is PPE-specific."
+regnskap-no:GoodwillMember,member,ifrs-full:GoodwillMember,skos:exactMatch,,
+regnskap-no:Sammenligningstall,concept,,,norwegian_specific,Comparative-period disclosure requirement per § 7-35 (3); IFRS via IAS 1.38.
+regnskap-no:GoodwillAvskrivningstid,concept,,,norwegian_specific,NGAAP amortises goodwill over economic life; IFRS does not amortise goodwill (impairment-only).
+regnskap-no:BokfortVerdiPantsattEiendel,concept,,,norwegian_specific,Norwegian-specific concept; no IFRS-Full equivalent.
+regnskap-no:GjeldSikretMedPant,concept,,,norwegian_specific,Norwegian disclosure under § 7-40 (2); IFRS uses different collateral disclosures.
+regnskap-no:EngangspostBelop,concept,,,norwegian_specific,Norwegian engangsposter per NRS 5; IFRS prohibits 'extraordinary items' presentation (IAS 1.87).
+regnskap-no:EngangspostBeskrivelse,concept,,,norwegian_specific,Norwegian-specific concept; no IFRS-Full equivalent.
+regnskap-no:AksjonaerstrukturAntallAksjer,concept,,,norwegian_specific,Norwegian-specific concept; no IFRS-Full equivalent.
+regnskap-no:AksjonaerstrukturEierandel,concept,,,norwegian_specific,Norwegian-specific concept; no IFRS-Full equivalent.
+regnskap-no:AksjonaerstrukturNavn,concept,,,norwegian_specific,Norwegian-specific concept; no IFRS-Full equivalent.
+regnskap-no:UtbytteForeslattBelop,concept,,,norwegian_specific,Proposed dividend recognized as liability under NGAAP at year-end; IFRS only when declared.
+regnskap-no:LanTilLedendePersoner,concept,,,norwegian_specific,Loans to senior personnel under aksjeloven; IFRS via IAS 24 related parties.
+regnskap-no:AnnenInnskuttEgenkapital,concept,,,norwegian_specific,Norwegian-specific equity component without IFRS-Full equivalent.
+regnskap-no:AksjerOgAndelerIForetakISammeKonsern,concept,,,norwegian_specific,Short-term holdings in group companies; Norwegian-specific separation.
+regnskap-no:AndreInvesteringer,concept,,,norwegian_specific,Other short-term investments.
+regnskap-no:InvesteringerIAnnetForetakSammeKonsern,concept,,,norwegian_specific,Sister-company investments in same group; IFRS does not segregate this category.
+regnskap-no:LanTilForetakISammeKonsern,concept,,,norwegian_specific,Inter-company loans (same group); IFRS aggregates under financial assets.
+regnskap-no:LanTilTilknyttetSelskapOgFelleskontrollertVirksomhet,concept,,,norwegian_specific,Loans to associates/JVs separately disclosed; IFRS aggregates.
+regnskap-no:SkipRiggerFlyOgLignende,concept,,,norwegian_specific,"Industry-specific aggregation (shipping, offshore, aviation); no exact IFRS-Full equivalent."
+regnskap-no:GjeldTilForetakSammeKonsern,concept,,,norwegian_specific,Long-term inter-company debt; Norwegian-specific separation.
+regnskap-no:SkyldigeOffentligeAvgifter,concept,,,norwegian_specific,"VAT, employer's NI contribution, withholding tax aggregated; Norwegian-specific."
+regnskap-no:InntektAndreInvesteringer,concept,,,norwegian_specific,Aggregert kategori for utbytte og gevinst på finansielle anleggsmidler utenfor konsern/tilknyttet; ingen direkte ifrs-full-ekvivalent.
+regnskap-no:InntektAndreInvesteringerFunksjon,concept,,,norwegian_specific,Samme begrep som § 6-1 post 12.

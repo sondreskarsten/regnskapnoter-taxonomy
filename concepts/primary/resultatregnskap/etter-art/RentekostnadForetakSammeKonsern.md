@@ -1,0 +1,41 @@
+---
+concept_id: regnskap-no:RentekostnadForetakSammeKonsern
+namespace: regnskap-no
+period_type: duration
+balance: debit
+data_type: monetaryItemType
+substitution_group: item
+abstract: false
+status: standard
+introduced_version: 0.1.0
+
+labels:
+  - lang: nb
+    role: standardLabel
+    text: "Rentekostnad til foretak i samme konsern"
+  - lang: en
+    role: standardLabel
+    text: "Interest expense to group entities"
+
+references:
+  - publisher: Stortinget
+    document: regnskapsloven
+    paragraph: "§ 6-1 (1) post 17"
+    applicable_from_fiscal_year: 1999
+
+mappings:
+  - to: ifrs-full:InterestExpense
+    relation: skos:closeMatch
+    quality: approximate
+    note: "Konsern-spesifikk underpost; mappes løst til generell rentekostnad."
+
+parents:
+  - role: "[610000] Resultatregnskap etter art"
+    parent: regnskap-no:ResultatForSkattekostnad
+    weight: -1
+    order: 17
+---
+
+## Verbatim text (regnskapsloven § 6-1 (1) post 17)
+
+> 17. Rentekostnad til foretak i samme konsern

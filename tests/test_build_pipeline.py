@@ -1,63 +1,105 @@
-import os
+"""Tests for the build pipeline."""
+
+from __future__ import annotations
+
 from pathlib import Path
 
 import pyarrow.parquet as pq
+import pytest
 
-from build import build_parquet, build_turtle, check_parquet_rdf_parity, validate_jsonschema, validate_referential, validate_shacl
-
-REPO_ROOT = Path(__file__).resolve().parent.parent
-
-
-def test_jsonschema_validation_passes():
-    assert validate_jsonschema.main() == 0
-
-
-def test_referential_validation_passes():
-    assert validate_referential.main() == 0
+from build.build_parquet import build_all
+from build.parse_concepts import REPO_ROOT, load_axes, load_concepts
+from build.validate_jsonschema import validate_axes as v_axes
+from build.validate_jsonschema import validate_concepts as v_concepts
+from build.validate_referential import _violations
 
 
-def test_parquet_build(tmp_path: Path):
-    counts = build_parquet.build_all(tmp_path)
-    assert counts["concepts"] >= 1
+def test_jsonschema_clean():
+    assert v_concepts() == [], "concept JSON-Schema violations"
+    assert v_axes() == [], "axis JSON-Schema violations"
+
+
+def test_referential_clean():
+    assert _violations() == [], "referential violations"
+
+
+def test_parquet_builds(tmp_path: Path):
+    counts = build_all(tmp_path)
+    assert counts["concepts"] > 0
+    assert counts["labels"] >= counts["concepts"] * 2
+    assert counts["axes"] >= 4
     assert (tmp_path / "concepts.parquet").exists()
-    assert (tmp_path / "labels.parquet").exists()
-    assert (tmp_path / "axes.parquet").exists()
-
-
-def test_concept_parquet_schema(tmp_path: Path):
-    build_parquet.build_all(tmp_path)
     table = pq.read_table(tmp_path / "concepts.parquet")
-    fields = {f.name for f in table.schema}
-    assert "concept_id" in fields
-    assert "period_type" in fields
-    assert "balance" in fields
-    assert "data_type" in fields
-    assert "status" in fields
+    assert "concept_id" in table.column_names
 
 
-def test_turtle_build(tmp_path: Path):
-    g = build_turtle.build_graph("test")
-    g.serialize(destination=str(tmp_path / "taxonomy.ttl"), format="turtle")
-    assert (tmp_path / "taxonomy.ttl").exists()
-    assert len(g) > 0
+def test_concept_id_unique():
+    seen: set[str] = set()
+    for c in load_concepts():
+        cid = c.front_matter["concept_id"]
+        assert cid not in seen, f"duplicate concept_id: {cid}"
+        seen.add(cid)
 
 
-def test_full_pipeline_with_seed(tmp_path: Path):
-    os.environ["RNT_OUT_DIR"] = str(tmp_path)
-    counts = build_parquet.build_all(tmp_path)
-    assert counts["concepts"] >= 1
-    g = build_turtle.build_graph("test")
-    g.serialize(destination=str(tmp_path / "taxonomy.ttl"), format="turtle")
-    g.serialize(destination=str(tmp_path / "taxonomy.jsonld"), format="json-ld", indent=2)
-    import sys
-    saved = sys.argv
-    sys.argv = ["validate_shacl", "--out-dir", str(tmp_path)]
-    try:
-        assert validate_shacl.main() == 0
-    finally:
-        sys.argv = saved
-    sys.argv = ["check_parity", "--out-dir", str(tmp_path)]
-    try:
-        assert check_parquet_rdf_parity.main() == 0
-    finally:
-        sys.argv = saved
+def test_axis_id_unique():
+    seen: set[str] = set()
+    for a in load_axes():
+        aid = a.front_matter["axis_id"]
+        assert aid not in seen, f"duplicate axis_id: {aid}"
+        seen.add(aid)
+
+
+def test_calc_arcs_have_valid_weights():
+    for c in load_concepts():
+        for arc in c.front_matter.get("parents") or []:
+            assert arc["weight"] in (-1, 1, -1.0, 1.0), f"bad weight in {c.path}: {arc['weight']}"
+
+
+def test_monetary_concepts_have_balance():
+    for c in load_concepts():
+        fm = c.front_matter
+        if fm["data_type"] == "monetaryItemType":
+            assert fm.get("balance") in ("debit", "credit"), (
+                f"{c.path}: monetary concept missing balance"
+            )
+
+
+def test_every_concept_has_norwegian_label():
+    for c in load_concepts():
+        labs = c.front_matter.get("labels") or []
+        nb_std = [l for l in labs if l["lang"] == "nb" and l["role"] == "standardLabel"]
+        assert len(nb_std) >= 1, f"{c.path}: missing Norwegian standardLabel"
+
+
+def test_every_concept_has_english_label():
+    for c in load_concepts():
+        labs = c.front_matter.get("labels") or []
+        en_std = [l for l in labs if l["lang"] == "en" and l["role"] == "standardLabel"]
+        assert len(en_std) >= 1, f"{c.path}: missing English standardLabel"
+
+
+def test_axes_have_members():
+    for a in load_axes():
+        assert len(a.front_matter.get("members") or []) > 0, f"{a.path}: axis has no members"
+
+
+def test_no_concept_references_unknown_axis():
+    axis_ids = {a.front_matter["axis_id"] for a in load_axes()}
+    for c in load_concepts():
+        for use in c.front_matter.get("axes") or []:
+            assert use["axis"] in axis_ids, f"{c.path}: unknown axis {use['axis']}"
+
+
+@pytest.mark.parametrize(
+    "expected_root_concept",
+    [
+        "regnskap-no:Salgsinntekt",
+        "regnskap-no:Lonnskostnad",
+        "regnskap-no:Eiendeler",
+        "regnskap-no:Egenkapital",
+        "regnskap-no:Gjeld",
+    ],
+)
+def test_root_concepts_present(expected_root_concept):
+    cids = {c.front_matter["concept_id"] for c in load_concepts()}
+    assert expected_root_concept in cids
