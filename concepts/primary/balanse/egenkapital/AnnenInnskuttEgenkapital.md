@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-2 C I 3"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "C. Egenkapital — I. Innskutt egenkapital — 3. Annen innskutt egenkapital"
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-2 C I 3"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

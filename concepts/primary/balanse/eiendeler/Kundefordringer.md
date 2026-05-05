@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-2 B II 1"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "B. Omløpsmidler / II."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-2 B II 1"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:TradeAndOtherCurrentReceivables
     relation: skos:closeMatch

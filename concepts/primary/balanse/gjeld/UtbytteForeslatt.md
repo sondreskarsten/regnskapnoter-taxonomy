@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-2 D III 7"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "D. Gjeld / III."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-2 D III 7"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:DividendsPayable
     relation: skos:closeMatch

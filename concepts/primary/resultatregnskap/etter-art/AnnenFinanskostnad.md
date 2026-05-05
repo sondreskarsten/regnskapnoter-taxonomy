@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-1 (1) post 18"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "18. Annen finanskostnad"
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-1 (1) post 18"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:FinanceCosts
     relation: skos:closeMatch

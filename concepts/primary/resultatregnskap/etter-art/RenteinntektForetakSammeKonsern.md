@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-1 (1) post 13"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "13. Renteinntekt fra foretak i samme konsern"
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-1 (1) post 13"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:InterestIncomeOnLoansAndReceivables
     relation: skos:closeMatch

@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-2 D I 3"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "D. Gjeld — I. Avsetning for forpliktelser — 3. Andre avsetninger for forpliktelser"
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-2 D I 3"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:OtherProvisions
     relation: skos:closeMatch

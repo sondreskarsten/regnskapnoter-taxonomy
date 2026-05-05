@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-2 B IV"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "B. Omløpsmidler / IV."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-2 B IV"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:CashAndCashEquivalents
     relation: skos:closeMatch
