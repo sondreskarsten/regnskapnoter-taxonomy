@@ -23,7 +23,12 @@ jobs:
       - name: Install
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[test,dev]"
+          pip install -e ".[test,dev,xbrl]"
+
+      - name: Pre-commit hooks (full sweep)
+        run: |
+          pip install pre-commit
+          pre-commit run --all-files
 
       - name: Ruff lint
         run: ruff check build/ tests/
@@ -50,6 +55,12 @@ jobs:
 
       - name: Parquet/RDF parity
         run: python -m build.check_parquet_rdf_parity
+
+      - name: Build XBRL package
+        run: python -m build.build_xbrl
+
+      - name: Validate XBRL with arelle
+        run: python -m build.validate_xbrl
 
       - name: build_tables mapping
         run: python -m build.validators.build_tables_mapping

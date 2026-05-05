@@ -37,7 +37,14 @@ def _to_uri(qname: str) -> URIRef:
     return URIRef(qname)
 
 
-def build_graph(version: str = "0.1.0") -> Graph:
+def _read_version() -> str:
+    vf = REPO_ROOT / "VERSION"
+    return vf.read_text(encoding="utf-8").strip() if vf.exists() else "0.1.0"
+
+
+def build_graph(version: str | None = None) -> Graph:
+    if version is None:
+        version = _read_version()
     g = Graph()
     g.bind("skos", SKOS)
     g.bind("dct", DCTERMS)
@@ -46,12 +53,129 @@ def build_graph(version: str = "0.1.0") -> Graph:
     g.bind("regnskap-no", RNO)
     g.bind("ifrs-full", IFRS_FULL)
 
+    rd_file = REPO_ROOT / "RELEASE_DATE"
+    iso_date = (
+        rd_file.read_text(encoding="utf-8").strip()
+        if rd_file.exists()
+        else datetime.now(UTC).date().isoformat()
+    )
+    iso_datetime = f"{iso_date}T00:00:00+00:00"
+    versioned_scheme = URIRef(f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/Scheme")
+
     g.add((SCHEME, RDF.type, SKOS.ConceptScheme))
+    g.add((SCHEME, OWL.versionIRI, versioned_scheme))
     g.add((SCHEME, DCTERMS.title, Literal("Regnskap-NO Noter Concept Scheme", lang="en")))
     g.add((SCHEME, DCTERMS.title, Literal("Regnskap-NO Noter konseptskjema", lang="nb")))
+    g.add(
+        (
+            SCHEME,
+            DCTERMS.description,
+            Literal(
+                "Concept dictionary for Norwegian financial-statement noter, modeled after XBRL "
+                "(information model), SKOS (vocabulary semantics), and W3C Web Annotation Data Model "
+                "(downstream annotation layer). Source-of-truth: Markdown + YAML front-matter.",
+                lang="en",
+            ),
+        )
+    )
     g.add((SCHEME, DCTERMS.hasVersion, Literal(version)))
-    g.add((SCHEME, DCTERMS.issued, Literal(datetime.now(UTC).date().isoformat(), datatype=XSD.date)))
+    g.add((SCHEME, DCTERMS.issued, Literal(iso_date, datatype=XSD.date)))
+    g.add((SCHEME, DCTERMS.modified, Literal(iso_datetime, datatype=XSD.dateTime)))
+    g.add((SCHEME, DCTERMS.creator, Literal("Sondre Skarsten")))
+    g.add((SCHEME, DCTERMS.publisher, Literal("Sondre Skarsten / DNB Corporate Banking")))
     g.add((SCHEME, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
+    g.add((SCHEME, DCTERMS.rightsHolder, Literal("Sondre Skarsten")))
+    g.add((SCHEME, DCTERMS.language, Literal("nb")))
+    g.add((SCHEME, DCTERMS.language, Literal("en")))
+    g.add((SCHEME, DCTERMS.conformsTo, URIRef("https://www.w3.org/2009/08/skos-reference/skos.html")))
+    g.add((SCHEME, DCTERMS.conformsTo, URIRef("https://www.w3.org/TR/shacl/")))
+    g.add(
+        (
+            SCHEME,
+            DCTERMS.conformsTo,
+            URIRef(
+                "https://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html"
+            ),
+        )
+    )
+    g.add(
+        (
+            SCHEME,
+            DCTERMS.bibliographicCitation,
+            Literal(
+                f"Skarsten, S. ({iso_date[:4]}). Regnskap-NO Noter Concept Scheme, "
+                f"version {version}. https://github.com/sondreskarsten/regnskapnoter-taxonomy"
+            ),
+        )
+    )
+
+    # DCAT Catalog -> Dataset -> Distributions
+    catalog = URIRef(f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/catalog")
+    dataset = URIRef(f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/dataset")
+    g.add((catalog, RDF.type, DCAT.Catalog))
+    g.add((catalog, DCTERMS.title, Literal(f"regnskapnoter-taxonomy v{version} catalog", lang="en")))
+    g.add((catalog, DCTERMS.publisher, Literal("Sondre Skarsten / DNB Corporate Banking")))
+    g.add((catalog, DCTERMS.issued, Literal(iso_date, datatype=XSD.date)))
+    g.add((catalog, DCAT.dataset, dataset))
+
+    g.add((dataset, RDF.type, DCAT.Dataset))
+    g.add((dataset, DCTERMS.title, Literal(f"regnskapnoter-taxonomy v{version}", lang="en")))
+    g.add((dataset, DCTERMS.identifier, Literal(f"regnskapnoter-taxonomy:v{version}")))
+    g.add((dataset, DCTERMS.issued, Literal(iso_date, datatype=XSD.date)))
+    g.add((dataset, DCTERMS.modified, Literal(iso_datetime, datatype=XSD.dateTime)))
+    g.add((dataset, DCTERMS.publisher, Literal("Sondre Skarsten / DNB Corporate Banking")))
+    g.add((dataset, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
+    g.add((dataset, DCTERMS.language, Literal("nb")))
+    g.add((dataset, DCTERMS.language, Literal("en")))
+    g.add((dataset, DCAT.theme, URIRef("https://eurovoc.europa.eu/4426")))  # accounting
+    g.add((dataset, DCAT.keyword, Literal("Norwegian", lang="en")))
+    g.add((dataset, DCAT.keyword, Literal("regnskap")))
+    g.add((dataset, DCAT.keyword, Literal("noter")))
+    g.add((dataset, DCAT.keyword, Literal("XBRL", lang="en")))
+    g.add((dataset, DCAT.keyword, Literal("SKOS", lang="en")))
+    g.add((dataset, DCAT.landingPage, URIRef("https://github.com/sondreskarsten/regnskapnoter-taxonomy")))
+
+    distros = [
+        (
+            f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/distribution/turtle",
+            "taxonomy.ttl",
+            "text/turtle",
+            f"https://storage.googleapis.com/regnskapnoter-taxonomy/v{version}/taxonomy.ttl",
+        ),
+        (
+            f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/distribution/jsonld",
+            "taxonomy.jsonld",
+            "application/ld+json",
+            f"https://storage.googleapis.com/regnskapnoter-taxonomy/v{version}/taxonomy.jsonld",
+        ),
+        (
+            f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/distribution/parquet-concepts",
+            "concepts.parquet",
+            "application/x-parquet",
+            f"https://storage.googleapis.com/regnskapnoter-taxonomy/v{version}/concepts.parquet",
+        ),
+        (
+            f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/distribution/parquet-labels",
+            "labels.parquet",
+            "application/x-parquet",
+            f"https://storage.googleapis.com/regnskapnoter-taxonomy/v{version}/labels.parquet",
+        ),
+        (
+            f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/distribution/parquet-mappings",
+            "mappings.parquet",
+            "application/x-parquet",
+            f"https://storage.googleapis.com/regnskapnoter-taxonomy/v{version}/mappings.parquet",
+        ),
+    ]
+    for distro_uri, title, mediatype, access_url in distros:
+        d = URIRef(distro_uri)
+        g.add((dataset, DCAT.distribution, d))
+        g.add((d, RDF.type, DCAT.Distribution))
+        g.add((d, DCTERMS.title, Literal(title)))
+        g.add((d, DCAT.mediaType, Literal(mediatype)))
+        g.add((d, DCAT.accessURL, URIRef(access_url)))
+        g.add((d, DCAT.downloadURL, URIRef(access_url)))
+        g.add((d, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
 
     concepts = load_concepts()
     axes = load_axes()
@@ -135,6 +259,17 @@ def build_graph(version: str = "0.1.0") -> Graph:
             mrelation = mapping.get("relation")
             if mtarget and mrelation in RELATION_MAP:
                 g.add((mid, RELATION_MAP[mrelation], _to_uri(mtarget)))
+    # Dated IRIs (criterion: SemVer + dated IRIs in published artifacts)
+    rno_versioned = Namespace(f"https://regnskapnoter-taxonomy/regnskap-no/v{version}/")
+    g.bind(f"rno-v{version.replace('.', '-')}", rno_versioned)
+    for s, _, _ in list(g.triples((None, RDF.type, SKOS.Concept))):
+        if str(s).startswith(str(RNO)):
+            local = str(s).removeprefix(str(RNO))
+            dated = URIRef(str(rno_versioned) + local)
+            g.add((dated, OWL.sameAs, s))
+            g.add((dated, DCTERMS.isVersionOf, s))
+            g.add((dated, DCTERMS.hasVersion, Literal(version)))
+
     return g
 
 
@@ -143,7 +278,7 @@ def main() -> int:
     parser.add_argument(
         "--out-dir", type=Path, default=Path(os.environ.get("RNT_OUT_DIR") or REPO_ROOT / "artifacts")
     )
-    parser.add_argument("--version", default="0.1.0")
+    parser.add_argument("--version", default=None)
     args = parser.parse_args()
     args.out_dir.mkdir(parents=True, exist_ok=True)
     g = build_graph(args.version)

@@ -13,7 +13,6 @@ import os
 import sys
 from pathlib import Path
 
-import pyarrow.compute as pc
 import pyarrow.fs as fs
 import pyarrow.parquet as pq
 
@@ -51,10 +50,20 @@ def load_calc_arcs() -> list[dict]:
     return pq.read_table(ARTIFACTS / "calc_arcs.parquet").to_pylist()
 
 
-def fetch_finstat_sample(n_firms: int = 98) -> "pd.DataFrame":
+def fetch_finstat_sample(n_firms: int = 98) -> pd.DataFrame:
     if Path(SA_KEY).exists():
         os.environ.setdefault("GOOGLE_APPLICATION_CREDENTIALS", SA_KEY)
-    cols = sorted(set(["OffentligNr", "Regnskapsar", "Regnskapsversjon", "RegnskapstypeKode", *CONCEPT_TO_FINSTAT.values()]))
+    cols = sorted(
+        set(
+            [
+                "OffentligNr",
+                "Regnskapsar",
+                "Regnskapsversjon",
+                "RegnskapstypeKode",
+                *CONCEPT_TO_FINSTAT.values(),
+            ]
+        )
+    )
     gcs = fs.GcsFileSystem()
     t = pq.read_table(
         FINSTAT_PATH,
@@ -76,6 +85,7 @@ def fetch_finstat_sample(n_firms: int = 98) -> "pd.DataFrame":
     if not parts:
         return df.iloc[:0]
     import pandas as pd
+
     return pd.concat(parts, ignore_index=True)
 
 

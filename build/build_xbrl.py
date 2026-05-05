@@ -43,10 +43,10 @@ XBRL_DATATYPES = {
     "sharesItemType": "xbrli:sharesItemType",
     "pureItemType": "xbrli:pureItemType",
     "dateItemType": "xbrli:dateItemType",
-    "textBlockItemType": "us-types:textBlockItemType",
+    "textBlockItemType": "xbrli:stringItemType",
     "booleanItemType": "xbrli:booleanItemType",
     "integerItemType": "xbrli:integerItemType",
-    "percentItemType": "num:percentItemType",
+    "percentItemType": "xbrli:pureItemType",
 }
 
 
@@ -68,6 +68,10 @@ def _build_xsd(concepts: list, axes: list, out_dir: Path) -> int:
             "targetNamespace": NS_RNO,
             "elementFormDefault": "qualified",
             "attributeFormDefault": "unqualified",
+            "xmlns:xbrldt": NS_XBRLDT,
+            "xmlns:link": NS_LINK,
+            "xmlns:xlink": NS_XLINK,
+            "xmlns:regnskap-no": NS_RNO,
         },
     )
     ET.SubElement(

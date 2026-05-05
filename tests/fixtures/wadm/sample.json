@@ -1,0 +1,15 @@
+{
+  "orgnr": "123456789",
+  "fiscal_year": 2023,
+  "source_pdf_uri": "gs://brreg-regnskap/raw/123456789/2023.pdf",
+  "annotations": [
+    {
+      "concept_id": "regnskap-no:Aksjekapital",
+      "value_numeric": 100000,
+      "page": 14,
+      "text_quote": "Aksjekapital 100 000",
+      "extraction_method": "gemini-2.5-flash",
+      "extraction_confidence": 0.94
+    }
+  ]
+}

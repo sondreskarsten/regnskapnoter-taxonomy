@@ -38,12 +38,12 @@ def write(
     role = role or f"[800000] Note {folder}"
     parents_block = ""
     if parent and weight is not None:
-        parents_block = f'''
+        parents_block = f"""
 parents:
   - role: "{role}"
     parent: {parent}
     weight: {weight:+d}
-    order: {order}'''
+    order: {order}"""
     mapping_block = ""
     if ifrs_quality == "norwegian_specific":
         mapping_block = f'''
