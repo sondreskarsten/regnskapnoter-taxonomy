@@ -1,7 +1,7 @@
 ---
-concept_id: regnskap-no:MellomvaerendeKonsernselskaper
+concept_id: regnskap-no:SkattUtland
 namespace: regnskap-no
-period_type: instant
+period_type: duration
 balance: debit
 data_type: monetaryItemType
 substitution_group: item
@@ -12,25 +12,23 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Mellomværende med konsernselskaper"
+    text: "Skatt utland"
   - lang: en
     role: standardLabel
-    text: "Intra-group balances"
+    text: "Foreign tax"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-40"
+    paragraph: "§ 7-29"
     applicable_from_fiscal_year: 1999
-
 mappings:
-  - to: ifrs-full:DueFromRelatedParties
+  - to: ifrs-full:ForeignTaxExpenseIncome
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept inkluderer både fordringer og gjeld; ifrs-full splitter i to."
-
+    note: "Tax paid to foreign jurisdictions."
 ---
 
-## Verbatim text (regnskapsloven § 7-40)
+## Verbatim text (regnskapsloven § 7-29)
 
-> Mellomværende med konsernselskaper
+> Skatt utland

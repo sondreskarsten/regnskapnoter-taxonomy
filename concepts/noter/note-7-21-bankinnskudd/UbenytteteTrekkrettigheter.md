@@ -1,8 +1,8 @@
 ---
-concept_id: regnskap-no:Kassekreditt
+concept_id: regnskap-no:UbenytteteTrekkrettigheter
 namespace: regnskap-no
 period_type: instant
-balance: credit
+balance: debit
 data_type: monetaryItemType
 substitution_group: item
 abstract: false
@@ -12,10 +12,10 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Kassekreditt"
+    text: "Ubenyttede trekkrettigheter"
   - lang: en
     role: standardLabel
-    text: "Bank overdraft"
+    text: "Unused credit lines"
 
 references:
   - publisher: Stortinget
@@ -26,9 +26,9 @@ mappings:
   - to: null
     relation: null
     quality: norwegian_specific
-    note: "Available overdraft facility; IFRS treats as financing activity in cash flow."
+    note: "Unused borrowing capacity disclosed under Norwegian practice; IFRS uses IAS 1.61 for liquidity."
 ---
 
 ## Verbatim text (regnskapsloven § 7-21)
 
-> Kassekreditt
+> Ubenyttede trekkrettigheter

@@ -1,5 +1,5 @@
 ---
-concept_id: regnskap-no:MellomvaerendeKonsernselskaper
+concept_id: regnskap-no:FremforbartUnderskudd
 namespace: regnskap-no
 period_type: instant
 balance: debit
@@ -12,25 +12,23 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Mellomværende med konsernselskaper"
+    text: "Fremførbart underskudd"
   - lang: en
     role: standardLabel
-    text: "Intra-group balances"
+    text: "Carry-forward losses"
 
 references:
   - publisher: Stortinget
-    document: regnskapsloven
-    paragraph: "§ 7-40"
+    document: skatteloven
+    paragraph: "§ 14-6"
     applicable_from_fiscal_year: 1999
-
 mappings:
-  - to: ifrs-full:DueFromRelatedParties
+  - to: ifrs-full:UnusedTaxLossesForWhichNoDeferredTaxAssetRecognised
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept inkluderer både fordringer og gjeld; ifrs-full splitter i to."
-
+    note: "Norwegian unused tax losses; IFRS reports recognized vs unrecognized split."
 ---
 
-## Verbatim text (regnskapsloven § 7-40)
+## Verbatim text (skatteloven § 14-6)
 
-> Mellomværende med konsernselskaper
+> Fremførbart underskudd

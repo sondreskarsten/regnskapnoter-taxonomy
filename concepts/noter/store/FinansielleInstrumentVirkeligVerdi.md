@@ -2,7 +2,7 @@
 concept_id: regnskap-no:FinansielleInstrumentVirkeligVerdi
 namespace: regnskap-no
 period_type: instant
-balance: null
+balance: debit
 data_type: monetaryItemType
 substitution_group: item
 abstract: false

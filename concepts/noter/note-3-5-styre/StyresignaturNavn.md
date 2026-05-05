@@ -1,9 +1,8 @@
 ---
-concept_id: regnskap-no:Kassekreditt
+concept_id: regnskap-no:StyresignaturNavn
 namespace: regnskap-no
 period_type: instant
-balance: credit
-data_type: monetaryItemType
+data_type: stringItemType
 substitution_group: item
 abstract: false
 status: standard
@@ -12,23 +11,23 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Kassekreditt"
+    text: "Styremedlem - navn (signatur)"
   - lang: en
     role: standardLabel
-    text: "Bank overdraft"
+    text: "Board member - name (signature)"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-21"
+    paragraph: "§ 3-5"
     applicable_from_fiscal_year: 1999
 mappings:
   - to: null
     relation: null
     quality: norwegian_specific
-    note: "Available overdraft facility; IFRS treats as financing activity in cash flow."
+    note: "Required board signatures on årsregnskap per regnskapsloven § 3-5."
 ---
 
-## Verbatim text (regnskapsloven § 7-21)
+## Verbatim text (regnskapsloven § 3-5)
 
-> Kassekreditt
+> Styremedlem - navn (signatur)

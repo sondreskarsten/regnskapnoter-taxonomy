@@ -2,7 +2,7 @@
 concept_id: regnskap-no:EgenkapitalPrinsippendring
 namespace: regnskap-no
 period_type: duration
-balance: null
+balance: credit
 data_type: monetaryItemType
 substitution_group: item
 abstract: false

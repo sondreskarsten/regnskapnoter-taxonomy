@@ -1,5 +1,5 @@
 ---
-concept_id: regnskap-no:EgenkapitalKorrigeringForFeil
+concept_id: regnskap-no:SkattepliktigInntekt
 namespace: regnskap-no
 period_type: duration
 balance: credit
@@ -12,24 +12,23 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Korrigering for feil i tidligere år"
+    text: "Skattepliktig inntekt"
   - lang: en
     role: standardLabel
-    text: "Correction of prior period errors"
+    text: "Taxable income"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-46"
+    paragraph: "§ 7-29"
     applicable_from_fiscal_year: 1999
-
 mappings:
-  - to: ifrs-full:IncreaseDecreaseThroughCorrectionsOfPriorPeriodErrors
-    relation: skos:exactMatch
-    quality: exact
-
+  - to: ifrs-full:CurrentTaxExpenseIncome
+    relation: skos:closeMatch
+    quality: approximate
+    note: "Taxable profit basis; IFRS reports current tax expense."
 ---
 
-## Verbatim text (regnskapsloven § 7-46)
+## Verbatim text (regnskapsloven § 7-29)
 
-> Korrigering for feil i tidligere år
+> Skattepliktig inntekt

@@ -1,8 +1,8 @@
 ---
-concept_id: regnskap-no:EgenkapitalKorrigeringForFeil
+concept_id: regnskap-no:BetalbarSkattAaret
 namespace: regnskap-no
 period_type: duration
-balance: credit
+balance: debit
 data_type: monetaryItemType
 substitution_group: item
 abstract: false
@@ -12,24 +12,22 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Korrigering for feil i tidligere år"
+    text: "Betalbar skatt for året"
   - lang: en
     role: standardLabel
-    text: "Correction of prior period errors"
+    text: "Current tax for the year"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-46"
+    paragraph: "§ 7-29"
     applicable_from_fiscal_year: 1999
-
 mappings:
-  - to: ifrs-full:IncreaseDecreaseThroughCorrectionsOfPriorPeriodErrors
+  - to: ifrs-full:CurrentTaxExpenseIncome
     relation: skos:exactMatch
     quality: exact
-
 ---
 
-## Verbatim text (regnskapsloven § 7-46)
+## Verbatim text (regnskapsloven § 7-29)
 
-> Korrigering for feil i tidligere år
+> Betalbar skatt for året

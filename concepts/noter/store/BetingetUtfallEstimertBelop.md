@@ -2,7 +2,7 @@
 concept_id: regnskap-no:BetingetUtfallEstimertBelop
 namespace: regnskap-no
 period_type: instant
-balance: null
+balance: credit
 data_type: monetaryItemType
 substitution_group: item
 abstract: false
