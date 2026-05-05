@@ -1,6 +1,6 @@
 [project]
 name = "regnskapnoter-taxonomy"
-version = "0.1.0"
+version = "1.0.0"
 description = "Norwegian regnskap noter concept taxonomy with verbatim definitions, calculation arcs, and IFRS-Full mappings."
 readme = "README.md"
 requires-python = ">=3.10"
