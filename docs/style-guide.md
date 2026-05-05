@@ -1,27 +1,63 @@
 # Style Guide
 
-## Concept ID Format
+## Concept ID Naming
 
-`regnskap-no:UpperCamelCaseName`
-
-- UpperCamelCase, no spaces.
-- Norwegian roots (e.g., `Salgsinntekt`, not `SalesRevenue`).
-- Drop short connector words (`og`, `i`, `av`, `til`, `for`, `med`, `eller`).
+- Format: `regnskap-no:<UpperCamelCaseName>`
+- Norwegian roots, never English: `Lonnskostnad`, not `EmployeeBenefitsExpense`.
+- Drop short connector words: `og`, `i`, `av`, `til`, `for`, `med`, `eller`.
+- Singular preferred unless concept aggregates: `Aksjonaerer`, `Datterselskap` (singular).
+- Sums prefixed `Sum`: `SumDriftsinntekter`.
 - Members end in `Member`: `AksjekapitalMember`.
 - Axes end in `Axis`: `EgenkapitalKomponentAxis`.
-- Hypercubes end in `Table`: `EgenkapitalRollforwardTable`.
-- Sums prefix `Sum`: `SumDriftsinntekter`, `SumEgenkapital`.
 
 ## Labels
 
-Norwegian standardLabel uses sentence-case Norwegian financial terminology as found in regnskapsloven. English standardLabel uses the IFRS-Full label where the concepts map exactly; otherwise a faithful translation that preserves Norwegian semantic distinctions.
+Every concept must have:
+- `lang: nb, role: standardLabel` (Norwegian)
+- `lang: en, role: standardLabel` (English)
 
-## Verbatim Quotations
+Optional roles: `terseLabel`, `verboseLabel`, `documentationLabel`, `totalLabel`, `periodStartLabel`, `periodEndLabel`, `negatedLabel`, `deprecatedLabel`.
 
-Every concept's Markdown body must contain at least one verbatim quote from the cited authoritative source, formatted as a Markdown blockquote with the citation in the heading.
+## Definitions and Verbatim Quoting
 
-## File Organization
+Definitions in `definitions[*]` must be verbatim from authoritative sources. Paraphrasing is rejected by review.
 
-Concepts under `concepts/<domain>/<sub-domain>/<ConceptId>.md` where `<domain>` is `primary` or `noter`. For noter, sub-domains follow the regnskapsloven § numbering: `note-7-38-loennskostnader`, etc.
+The Markdown body should contain at least one verbatim quotation block:
 
-Axes under `axes/<AxisId>.md` (flat).
+```markdown
+## Verbatim text (regnskapsloven § 6-1 (1) post 1)
+
+> 1. Salgsinntekt
+```
+
+## References
+
+Every concept must cite at least one regnskapsloven paragraph or NRS standard, listed in `references[*]`. Citations must resolve to entries in `references/regnskapsloven-paragraphs.yaml`, `references/forskrift-paragraphs.yaml`, or `references/nrs-standards.yaml`.
+
+## IFRS-Full Mappings
+
+Every monetary concept should have an `ifrs-full:` mapping where one exists. Use:
+
+- `skos:exactMatch` only when concepts are substitutable in any analytical context.
+- `skos:closeMatch` when concepts are mostly equivalent but with caveats; the `note` field is required.
+- `quality: norwegian_specific` when no IFRS-Full equivalent exists; `to` and `relation` are null.
+
+## Calculation Arcs
+
+Use `parents[*]`:
+
+- `role`: ELR notation, e.g., `[610000] Resultatregnskap etter art`.
+- `parent`: the parent concept ID.
+- `weight`: `+1` (added) or `-1` (subtracted).
+- `order`: ≥ 1, used for presentation ordering.
+
+A concept may appear as a child in multiple roles (different views of the same fact).
+
+## Forbidden Patterns
+
+- Paraphrased definitions (use verbatim quotes only).
+- Concept ID renames (deprecate and replace).
+- Reused concept IDs (forever forbidden).
+- IFRS-Full mappings without `note` when `quality: approximate`.
+- `weight` values other than `+1` or `-1`.
+- `balance` on non-monetary concepts.

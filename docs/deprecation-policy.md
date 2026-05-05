@@ -2,27 +2,45 @@
 
 ## Lifecycle
 
-Every concept moves through `candidate → standard → deprecated → retired`.
+Every concept has a `status` field that moves through:
 
-- `candidate`: introduced but not yet operational. Consumers should not depend on it.
-- `standard`: operational. The default for new concepts after their candidacy period.
-- `deprecated`: replaced by another concept or rendered obsolete. Retains its ID forever. Has `deprecated_date` (required) and `deprecated_replacement` (recommended but not required).
-- `retired`: no longer used in any active fiscal year. ID remains reserved.
+```
+candidate → standard → deprecated → retired
+```
 
-## Immutability of Concept IDs
+### candidate
 
-Once a concept_id has appeared in a published release, it cannot be reassigned. Concept renames are forbidden. To rename a concept:
+A new concept introduced in a release but not yet operational. Consumers should not depend on candidate concepts. Promote to `standard` in a later release.
 
-1. Set the old concept's status to `deprecated` with `deprecated_date` and `deprecated_replacement` set to the new concept's ID.
-2. Add a new concept with the new ID.
-3. Add a `dct:isReplacedBy` triple in the RDF and a `mappings[*]` entry of relation `skos:isReplacedBy`.
+### standard
 
-## SemVer Mapping
+The default. Operational and committed.
 
-- Concept removed: major version bump. (Concepts are deprecated, not removed; this rule is only triggered if a concept is moved to `retired` and downstream consumers depend on its presence.)
-- Concept_id changed: forbidden.
-- Concept's `period_type`, `balance`, or `data_type` changed: major version bump.
-- New concepts added: minor version bump.
-- New labels in any language added: minor version bump.
-- New references or mappings added: minor version bump.
-- Typo or label refinement: patch version bump.
+### deprecated
+
+The concept is replaced by another concept or rendered obsolete by a regnskapsloven amendment or NRS revision. The concept retains its `concept_id` forever. Required fields when transitioning to deprecated:
+
+- `deprecated_date`: the date the concept was deprecated.
+- `deprecated_replacement`: recommended; the concept_id of the replacement, if any.
+
+### retired
+
+The concept is no longer used in any active fiscal year. The `concept_id` remains reserved.
+
+## Concept ID Immutability
+
+A concept's `concept_id` is immutable once it has appeared in a published release. To "rename" a concept, you must:
+
+1. Mark the old concept as `deprecated` with the appropriate `deprecated_date`.
+2. Create a new concept with the new ID.
+3. Add a mapping from old to new in `mappings/old-to-new.csv` (or via `mappings[*]` on the new concept with `relation: skos:exactMatch` and a `note` indicating the replacement relationship).
+
+The old `concept_id` is never reassigned to a different concept.
+
+## Backward Compatibility
+
+A consumer pinned to v1.5.0 must function unchanged against v1.7.0. A consumer pinned to v1.5.0 may need code changes for v2.0.0; these are documented in `CHANGELOG.md` with a migration guide.
+
+## Removal
+
+Concepts are never removed. They progress through `deprecated → retired`. Concepts can be retired only when no active fiscal year requires them.

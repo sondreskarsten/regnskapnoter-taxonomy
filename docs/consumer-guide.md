@@ -1,81 +1,122 @@
 # Consumer Guide
 
-## Pinning a Version
+This guide explains how downstream pipelines pin to and consume regnskapnoter-taxonomy.
 
-Downstream pipelines pin to a specific taxonomy version. The version is published to:
+## Pinning
 
-- `gs://regnskapnoter-taxonomy/v<X.Y.Z>/` (immutable per release)
-- `gs://regnskapnoter-taxonomy/latest/` (always points to the most recent release)
+Always pin to a specific version. Use the major version for compatibility, the minor version for new concepts you've adopted, and the patch version for bug fixes.
 
-Pin to `v<X.Y.Z>` in production; never pin to `latest/`.
+```python
+TAXONOMY_VERSION = "1.0.0"
+TAXONOMY_GCS_PREFIX = f"gs://regnskapnoter-taxonomy/v{TAXONOMY_VERSION}/"
+```
 
-## Loading the Dictionary
+Never pin to `latest/` in production. The `latest/` prefix exists only for inspection and ad-hoc queries.
+
+## Loading from GCS
+
+```python
+import pyarrow.parquet as pq
+from google.cloud import storage
+
+client = storage.Client()
+bucket = client.bucket("regnskapnoter-taxonomy")
+
+def load_artifact(name: str, version: str) -> pq.Table:
+    blob = bucket.blob(f"v{version}/{name}.parquet")
+    blob.download_to_filename(f"/tmp/{name}.parquet")
+    return pq.read_table(f"/tmp/{name}.parquet")
+
+concepts = load_artifact("concepts", "1.0.0")
+calc_arcs = load_artifact("calc_arcs", "1.0.0")
+references = load_artifact("references", "1.0.0")
+mappings = load_artifact("mappings", "1.0.0")
+```
+
+## Querying with DuckDB
+
+DuckDB reads Parquet directly:
 
 ```python
 import duckdb
-conn = duckdb.connect()
-conn.execute("CREATE VIEW concepts AS SELECT * FROM 'gs://regnskapnoter-taxonomy/v1.0.0/concepts.parquet'")
-conn.execute("CREATE VIEW labels AS SELECT * FROM 'gs://regnskapnoter-taxonomy/v1.0.0/labels.parquet'")
-conn.execute("CREATE VIEW references AS SELECT * FROM 'gs://regnskapnoter-taxonomy/v1.0.0/references.parquet'")
+
+con = duckdb.connect()
+con.execute(f"CREATE VIEW concepts AS SELECT * FROM read_parquet('{TAXONOMY_GCS_PREFIX}concepts.parquet')")
+con.execute(f"CREATE VIEW references AS SELECT * FROM read_parquet('{TAXONOMY_GCS_PREFIX}references.parquet')")
+
+# Find all concepts derived from regnskapsloven § 7-38
+result = con.execute("""
+    SELECT c.concept_id, c.data_type, c.balance, l.text AS label_nb
+    FROM concepts c
+    JOIN references r ON c.concept_id = r.subject_id
+    LEFT JOIN read_parquet('artifacts/labels.parquet') l
+        ON l.subject_id = c.concept_id AND l.lang = 'nb' AND l.role = 'standardLabel'
+    WHERE r.publisher = 'Stortinget'
+      AND r.document = 'regnskapsloven'
+      AND r.paragraph LIKE '§ 7-38%'
+""").fetchall()
 ```
 
-## Common Query Patterns
+## Annotation Output Schema
 
-### Look up all concepts derived from a regnskapsloven paragraph
+When emitting `annotations.parquet`, conform to the schema in §5.1 of the implementation plan.
+The minimum required fields:
+
+```python
+ANNOTATION_SCHEMA = {
+    "annotation_id": str,         # UUIDv4
+    "orgnr": str,                 # 9-digit
+    "fiscal_year": int,
+    "body_concept_id": str,       # must exist in concepts.parquet
+    "body_value": "decimal(38,2)",
+    "body_unit": str,             # NOK | EUR | shares | pure
+    "body_period_type": str,      # instant | duration
+    "body_period_start": "date",
+    "body_period_end": "date",
+    "target_source_uri": str,
+    "target_source_sha256": str,
+    "selector_type": str,
+    "selector_exact": str,
+    "selector_page": int,
+    "motivation": str,            # tagging
+    "creator": str,               # pipeline name + version
+    "created": "timestamp",
+    "taxonomy_version": str,      # "1.0.0"
+    "confidence": float,
+    "provenance_source": str,
+}
+```
+
+## Validating Annotations Against the Taxonomy
+
+Every `body_concept_id` must exist in `concepts.parquet`. CI in your consumer pipeline should enforce this:
+
+```python
+def validate_annotations(annotations: pq.Table, concepts: pq.Table) -> list[str]:
+    valid_ids = set(concepts["concept_id"].to_pylist())
+    bad = [
+        cid for cid in annotations["body_concept_id"].to_pylist()
+        if cid not in valid_ids
+    ]
+    return bad
+```
+
+## Migration Across Major Versions
+
+When the taxonomy releases a major version (e.g., v2.0.0), check `mappings.parquet` for `dct:isReplacedBy`-style entries:
 
 ```sql
-SELECT c.concept_id, l.text AS label_nb
-FROM concepts c
-JOIN labels l USING (concept_id)
-JOIN references r ON r.subject_id = c.concept_id AND r.subject_kind = 'concept'
-WHERE r.publisher = 'Stortinget'
-  AND r.document = 'regnskapsloven'
-  AND r.paragraph LIKE '§ 7-38%'
-  AND l.lang = 'nb' AND l.role = 'standardLabel'
+SELECT subject_id AS old_concept, target AS new_concept
+FROM read_parquet('gs://regnskapnoter-taxonomy/v2.0.0/mappings.parquet')
+WHERE relation = 'skos:exactMatch'
+  AND quality = 'exact'
+  AND note LIKE 'replaces v1%'
 ```
 
-### Get IFRS-Full equivalent for a regnskap-no concept
+Apply these substitutions to your historical annotation set before re-validating.
 
-```sql
-SELECT subject_id AS regnskap_no, target AS ifrs_full, relation, quality, note
-FROM mappings
-WHERE subject_id = 'regnskap-no:Lonnskostnad'
-  AND target LIKE 'ifrs-full:%'
-```
+## Recommended Consumers
 
-### Walk calculation arcs to compute a parent's expected sum
-
-```sql
-SELECT child_id, weight, "order"
-FROM calc_arcs
-WHERE parent_id = 'regnskap-no:SumDriftsinntekter'
-  AND role = '[610000] Resultatregnskap etter art'
-ORDER BY "order"
-```
-
-## Annotation Layer
-
-Annotations from extraction pipelines conform to the W3C Web Annotation Data Model and are emitted as Parquet partitioned by `(fiscal_year, orgnr)`. Schema:
-
-| Column | Type | Notes |
-|---|---|---|
-| annotation_id | string | UUIDv4 |
-| orgnr | string | filing identifier |
-| fiscal_year | int | period anchor |
-| body_concept_id | string | reference to concepts.concept_id |
-| body_value | decimal(38, 2) | fact value (monetary or pure) |
-| body_unit | string | NOK, EUR, shares, pure |
-| body_period_start | date | XBRL context start |
-| body_period_end | date | XBRL context end |
-| body_axis_members | list<struct> | dimensional context |
-| target_source_uri | string | PDF URI |
-| selector_type | string | `TextQuoteSelector` etc. |
-| selector_exact, selector_prefix, selector_suffix | string | WADM TextQuoteSelector |
-| selector_page | int | PDF page number |
-| selector_xywh | struct | Media Fragments bbox |
-| motivation | string | `tagging` |
-| creator | string | pipeline name + version |
-| created | timestamp | event time |
-| taxonomy_version | string | regnskapnoter-taxonomy SemVer |
-| confidence | float | extraction confidence 0-1 |
-| provenance_source | string | extraction tool identifier |
+- `noter-text-extraction`: emits annotations from PDF source text.
+- `noter-canonicalizer`: reconciles annotations from multiple sources (nokkeltall, tesseract, gemini extraction) into a single fact-grain output keyed on (orgnr, fiscal_year, concept_id).
+- `firm-deterioration`: feature engineering reads annotations grouped by concept_id and time-evolution.
