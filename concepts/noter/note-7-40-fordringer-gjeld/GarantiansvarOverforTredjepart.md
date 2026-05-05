@@ -1,5 +1,5 @@
 ---
-concept_id: regnskap-no:GjeldSikretMedPant
+concept_id: regnskap-no:GarantiansvarOverforTredjepart
 namespace: regnskap-no
 period_type: instant
 balance: credit
@@ -12,10 +12,10 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Gjeld sikret med pant"
+    text: "Garantiansvar overfor tredjepart"
   - lang: en
     role: standardLabel
-    text: "Secured debt"
+    text: "Guarantee liabilities to third parties"
 
 references:
   - publisher: Stortinget
@@ -24,13 +24,13 @@ references:
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:SecuredBankLoansReceived
+  - to: ifrs-full:ContingentLiabilitiesIncurredByVentureFromInterestsInJointVentures
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept dekker all sikret gjeld; ifrs-full splitter etter motpartstype."
+    note: "Garantiansvar er en betinget forpliktelse; ifrs-full har lignende konsept under JV-kontekst men ikke en direkte ekvivalent for tredjepartsgarantier."
 
 ---
 
 ## Verbatim text (regnskapsloven § 7-40)
 
-> Gjeld sikret med pant
+> Garantiansvar overfor tredjepart

@@ -1,5 +1,5 @@
 ---
-concept_id: regnskap-no:TilknyttetSelskapNavn
+concept_id: regnskap-no:FordringForeldelseStatus
 namespace: regnskap-no
 period_type: instant
 balance: null
@@ -12,24 +12,24 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Navn på tilknyttet selskap"
+    text: "Foreldelsesstatus for fordring"
   - lang: en
     role: standardLabel
-    text: "Name of associated company"
+    text: "Receivable prescription status"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-44"
+    paragraph: "§ 7-40"
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:NameOfAssociate
-    relation: skos:exactMatch
-    quality: exact
+  - to: null
+    relation: null
+    quality: norwegian_specific
 
 ---
 
-## Verbatim text (regnskapsloven § 7-44)
+## Verbatim text (regnskapsloven § 7-40)
 
-> Navn på tilknyttet selskap
+> Foreldelsesstatus for fordring

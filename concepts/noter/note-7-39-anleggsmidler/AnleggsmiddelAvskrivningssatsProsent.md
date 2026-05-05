@@ -1,7 +1,7 @@
 ---
-concept_id: regnskap-no:TilknyttetSelskapEierandel
+concept_id: regnskap-no:AnleggsmiddelAvskrivningssatsProsent
 namespace: regnskap-no
-period_type: instant
+period_type: duration
 balance: null
 data_type: percentItemType
 substitution_group: item
@@ -12,24 +12,24 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Eierandel i tilknyttet selskap"
+    text: "Avskrivningssats i prosent"
   - lang: en
     role: standardLabel
-    text: "Interest in associate"
+    text: "Depreciation rate (percent)"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-44"
+    paragraph: "§ 7-39"
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:ProportionOfOwnershipInterestInAssociate
-    relation: skos:exactMatch
-    quality: exact
+  - to: null
+    relation: null
+    quality: norwegian_specific
 
 ---
 
-## Verbatim text (regnskapsloven § 7-44)
+## Verbatim text (regnskapsloven § 7-39)
 
-> Eierandel i tilknyttet selskap
+> Avskrivningssats i prosent

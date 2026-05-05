@@ -1,5 +1,5 @@
 ---
-concept_id: regnskap-no:GjeldSikretMedPant
+concept_id: regnskap-no:GjeldUsikret
 namespace: regnskap-no
 period_type: instant
 balance: credit
@@ -12,10 +12,10 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Gjeld sikret med pant"
+    text: "Gjeld uten sikkerhet"
   - lang: en
     role: standardLabel
-    text: "Secured debt"
+    text: "Unsecured debt"
 
 references:
   - publisher: Stortinget
@@ -24,13 +24,13 @@ references:
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:SecuredBankLoansReceived
+  - to: ifrs-full:UnsecuredBankLoansReceived
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept dekker all sikret gjeld; ifrs-full splitter etter motpartstype."
+    note: "Norsk konsept dekker all usikret gjeld; ifrs-full splitter etter motpartstype."
 
 ---
 
 ## Verbatim text (regnskapsloven § 7-40)
 
-> Gjeld sikret med pant
+> Gjeld uten sikkerhet

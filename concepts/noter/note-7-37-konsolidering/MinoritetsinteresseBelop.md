@@ -1,9 +1,9 @@
 ---
-concept_id: regnskap-no:TilknyttetSelskapEierandel
+concept_id: regnskap-no:MinoritetsinteresseBelop
 namespace: regnskap-no
 period_type: instant
-balance: null
-data_type: percentItemType
+balance: credit
+data_type: monetaryItemType
 substitution_group: item
 abstract: false
 status: standard
@@ -12,24 +12,24 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Eierandel i tilknyttet selskap"
+    text: "Minoritetsinteresse beløp"
   - lang: en
     role: standardLabel
-    text: "Interest in associate"
+    text: "Non-controlling interest amount"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-44"
+    paragraph: "§ 7-37"
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:ProportionOfOwnershipInterestInAssociate
+  - to: ifrs-full:NoncontrollingInterests
     relation: skos:exactMatch
     quality: exact
 
 ---
 
-## Verbatim text (regnskapsloven § 7-44)
+## Verbatim text (regnskapsloven § 7-37)
 
-> Eierandel i tilknyttet selskap
+> Minoritetsinteresse beløp

@@ -1,9 +1,9 @@
 ---
-concept_id: regnskap-no:GjeldSikretMedPant
+concept_id: regnskap-no:PantsatteEiendelerBeskrivelse
 namespace: regnskap-no
 period_type: instant
-balance: credit
-data_type: monetaryItemType
+balance: null
+data_type: textBlockItemType
 substitution_group: item
 abstract: false
 status: standard
@@ -12,10 +12,10 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Gjeld sikret med pant"
+    text: "Beskrivelse av pantsatte eiendeler"
   - lang: en
     role: standardLabel
-    text: "Secured debt"
+    text: "Description of pledged assets"
 
 references:
   - publisher: Stortinget
@@ -24,13 +24,13 @@ references:
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:SecuredBankLoansReceived
+  - to: ifrs-full:DescriptionOfNatureAndCarryingAmountOfAssetsPledgedAsCollateralForLiabilities
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept dekker all sikret gjeld; ifrs-full splitter etter motpartstype."
+    note: "Norsk konsept er beskrivelse av pantsatte eiendeler; IFRS-Full har lignende men er gruppert under sikkerhetsstillelse."
 
 ---
 
 ## Verbatim text (regnskapsloven § 7-40)
 
-> Gjeld sikret med pant
+> Beskrivelse av pantsatte eiendeler

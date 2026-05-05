@@ -1,7 +1,7 @@
 ---
-concept_id: regnskap-no:GjeldSikretMedPant
+concept_id: regnskap-no:EgenkapitalKapitalforhoyelse
 namespace: regnskap-no
-period_type: instant
+period_type: duration
 balance: credit
 data_type: monetaryItemType
 substitution_group: item
@@ -12,25 +12,25 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Gjeld sikret med pant"
+    text: "Kapitalforhøyelse"
   - lang: en
     role: standardLabel
-    text: "Secured debt"
+    text: "Capital increase"
 
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 7-40"
+    paragraph: "§ 7-46"
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:SecuredBankLoansReceived
+  - to: ifrs-full:IncreaseDecreaseThroughIssueOfShareCapital
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept dekker all sikret gjeld; ifrs-full splitter etter motpartstype."
+    note: "Norsk konsept dekker både kontant og naturalia; ifrs-full er begrenset til share-capital issue."
 
 ---
 
-## Verbatim text (regnskapsloven § 7-40)
+## Verbatim text (regnskapsloven § 7-46)
 
-> Gjeld sikret med pant
+> Kapitalforhøyelse

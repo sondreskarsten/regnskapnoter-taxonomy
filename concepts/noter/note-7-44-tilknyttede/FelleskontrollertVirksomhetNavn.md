@@ -1,9 +1,9 @@
 ---
-concept_id: regnskap-no:TilknyttetSelskapEierandel
+concept_id: regnskap-no:FelleskontrollertVirksomhetNavn
 namespace: regnskap-no
 period_type: instant
 balance: null
-data_type: percentItemType
+data_type: stringItemType
 substitution_group: item
 abstract: false
 status: standard
@@ -12,10 +12,10 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Eierandel i tilknyttet selskap"
+    text: "Navn på felleskontrollert virksomhet"
   - lang: en
     role: standardLabel
-    text: "Interest in associate"
+    text: "Name of joint venture"
 
 references:
   - publisher: Stortinget
@@ -24,7 +24,7 @@ references:
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:ProportionOfOwnershipInterestInAssociate
+  - to: ifrs-full:NameOfJointVenture
     relation: skos:exactMatch
     quality: exact
 
@@ -32,4 +32,4 @@ mappings:
 
 ## Verbatim text (regnskapsloven § 7-44)
 
-> Eierandel i tilknyttet selskap
+> Navn på felleskontrollert virksomhet

@@ -1,8 +1,8 @@
 ---
-concept_id: regnskap-no:GjeldSikretMedPant
+concept_id: regnskap-no:FordringerForfallEttFemAr
 namespace: regnskap-no
 period_type: instant
-balance: credit
+balance: debit
 data_type: monetaryItemType
 substitution_group: item
 abstract: false
@@ -12,10 +12,10 @@ introduced_version: 0.1.0
 labels:
   - lang: nb
     role: standardLabel
-    text: "Gjeld sikret med pant"
+    text: "Fordringer med forfall mellom ett og fem år"
   - lang: en
     role: standardLabel
-    text: "Secured debt"
+    text: "Receivables falling due between 1 and 5 years"
 
 references:
   - publisher: Stortinget
@@ -24,13 +24,13 @@ references:
     applicable_from_fiscal_year: 1999
 
 mappings:
-  - to: ifrs-full:SecuredBankLoansReceived
+  - to: ifrs-full:LongtermTradeReceivables
     relation: skos:closeMatch
     quality: approximate
-    note: "Norsk konsept dekker all sikret gjeld; ifrs-full splitter etter motpartstype."
+    note: "Norsk presentasjon krever 1-5 år bucket; IFRS-Full grupperer som non-current trade receivables uten 1-5 år splitt."
 
 ---
 
 ## Verbatim text (regnskapsloven § 7-40)
 
-> Gjeld sikret med pant
+> Fordringer med forfall mellom ett og fem år
