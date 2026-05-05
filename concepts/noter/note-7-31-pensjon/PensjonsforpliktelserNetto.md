@@ -22,6 +22,16 @@ references:
     document: NRS 6
     paragraph: "kap. 4"
     applicable_from_fiscal_year: 2007
+definitions:
+  - lang: nb
+    role: definition
+    text: "4. Standarden omhandler regnskapsføring ved normal oppfølging og oppfyllelse av pensjonsplaner. Standarden omhandler også oppgjør eller vesentlig avkorting av pensjonsplan. 4A. Som et alternativ til den regnskapsføring som følger av standardens hovedregler, åpnes det i henholdsvis punkt 67 og 68 for anvendelse av målereglene og reglene om resultatspesifikasjon i IAS 19 og US GAAP. 1 NRS 6 Pensjonskostnader Pensjonsordninger i Norge Finansiering direkte over drift"
+    source_publisher: NRS
+    source_document: NRS 6
+    source_paragraph: "kap. 4"
+    applicable_from_fiscal_year: 2007
+    authoritative: true
+
 mappings:
   - to: ifrs-full:NetDefinedBenefitLiabilityAsset
     relation: skos:closeMatch

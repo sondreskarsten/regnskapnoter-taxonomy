@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-33"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Betingede utfall Det skal opplyses om forhold ved regnskapsårets slutt med betinget utfall."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-33"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:EstimateOfFinancialEffectOfContingentLiabilities
     relation: skos:exactMatch

@@ -22,6 +22,16 @@ references:
     document: NRS 6
     paragraph: "kap. 5"
     applicable_from_fiscal_year: 2007
+definitions:
+  - lang: nb
+    role: definition
+    text: "5. Utbetaling av pensjoner finansieres gjennom foretakets ordinære drift. Det er i utgangspunktet ikke øremerket særskilte eiendeler for finansiering og sikring av pensjonsforpliktelsene. Pensjonsytelser over drift kan imidlertid sikres helt eller delvis gjennom ulike former for sikkerhetsstillelser. Slike pensjonsforpliktelser er likevel ofte usikret. Finansiering ved fondsopplegg"
+    source_publisher: NRS
+    source_document: NRS 6
+    source_paragraph: "kap. 5"
+    applicable_from_fiscal_year: 2007
+    authoritative: true
+
 mappings:
   - to: ifrs-full:PostemploymentBenefitExpenseDefinedBenefitPlans
     relation: skos:closeMatch

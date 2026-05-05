@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "A. Anleggsmidler / II."
+    text: "A. Anleggsmidler — II. Varige driftsmidler — 1. Tomter, bygninger og annen fast eiendom"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 A II 1"

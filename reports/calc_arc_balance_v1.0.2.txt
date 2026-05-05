@@ -1,0 +1,13 @@
+Loading finstat sample (n_firms_per_year ≈ 19)...
+  observations: 95
+calc arc balance: 65/71 = 91.5%
+
+First 10 failures:
+  [610000] Resultatregnskap etter art parent=regnskap-no:Driftsresultat (orgnr=840215512.0, year=2022): observed=164553, computed=345533, diff=0.5238
+  [610000] Resultatregnskap etter art parent=regnskap-no:ResultatForSkattekostnad (orgnr=812206222.0, year=2018): observed=30133, computed=41348, diff=0.2712
+  [610000] Resultatregnskap etter art parent=regnskap-no:ResultatForSkattekostnad (orgnr=812206222.0, year=2019): observed=33143, computed=37604, diff=0.1186
+  [610000] Resultatregnskap etter art parent=regnskap-no:ResultatForSkattekostnad (orgnr=812983482.0, year=2020): observed=11653, computed=12354, diff=0.0567
+  [610000] Resultatregnskap etter art parent=regnskap-no:ResultatForSkattekostnad (orgnr=812206222.0, year=2021): observed=-15804, computed=-9821, diff=0.3786
+  [610000] Resultatregnskap etter art parent=regnskap-no:ResultatForSkattekostnad (orgnr=840215512.0, year=2022): observed=133247, computed=146629, diff=0.0913
+
+PASS (91.5% >= 90%)

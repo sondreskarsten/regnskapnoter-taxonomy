@@ -22,6 +22,16 @@ references:
     document: NRS 2
     paragraph: "kap. 3"
     applicable_from_fiscal_year: 2003
+definitions:
+  - lang: nb
+    role: definition
+    text: "3. Standarden omhandler regnskapsføring av anleggskontrakt. Anleggskontrakt brukes som samlebetegnelse på kontraktsfestet tilvirkning av én enkelt eiendel eller flere eiendeler som sammen utgjør en helhet. Standarden gjelder alle regn- skapspliktige. Det gjelder egne regler for små foretak, jf. pkt. 53."
+    source_publisher: NRS
+    source_document: NRS 2
+    source_paragraph: "kap. 3"
+    applicable_from_fiscal_year: 2003
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

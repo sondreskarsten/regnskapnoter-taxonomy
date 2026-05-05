@@ -22,6 +22,16 @@ references:
     document: regnskapsloven
     paragraph: "§ 7-45"
     applicable_from_fiscal_year: 1999
+definitions:
+  - lang: nb
+    role: definition
+    text: "Lån og sikkerhetsstillelse til ledende personer, aksjeeiere m.v. Det skal opplyses om samlede lån til og samlet sikkerhetsstillelse til fordel for medlemmer av styret med angivelse av rentesats, hovedvilkår og eventuelle tilbakebetalte, avskrevne eller frafalte beløp. Det samme gjelder for medlemmer av annet administrasjons-, ledelses- eller kontrollorgan."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-45"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

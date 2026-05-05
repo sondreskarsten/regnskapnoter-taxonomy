@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-8"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Salgsinntekter Salgsinntekter skal spesifiseres på virksomhetsområde og geografisk marked."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-8"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:DescriptionOfAccountingPolicyForRecognitionOfRevenueExplanatory
     relation: skos:closeMatch

@@ -23,6 +23,16 @@ references:
     paragraph: "§ 6-1"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "(1) Resultatregnskapet etter art skal ha følgende oppstillingsplan."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 6-1"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:IncomeStatementAbstract
     relation: skos:closeMatch

@@ -21,6 +21,16 @@ references:
     document: NRS 8
     paragraph: "kap. 1"
     applicable_from_fiscal_year: 2010
+definitions:
+  - lang: nb
+    role: definition
+    text: "1. NRS 8 GOD REGNSKAPSSKIKK (GRS) FOR SMÅ FORETAK – VIRKEOMRÅDE OG FORMÅL 4 1.1 REGNSKAPSPLIKT .......................................................................................................................................... 4 1.2 DEFINISJON AV SMÅ FORETAK ....................................................................................................................... 5"
+    source_publisher: NRS
+    source_document: NRS 8
+    source_paragraph: "kap. 1"
+    applicable_from_fiscal_year: 2010
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

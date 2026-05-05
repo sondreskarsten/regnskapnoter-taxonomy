@@ -51,6 +51,9 @@ jobs:
       - name: Parquet/RDF parity
         run: python -m build.check_parquet_rdf_parity
 
+      - name: build_tables mapping
+        run: python -m build.validators.build_tables_mapping
+
       - name: Tests
         run: pytest tests/
 

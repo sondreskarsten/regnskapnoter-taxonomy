@@ -20,16 +20,16 @@ labels:
 references:
   - publisher: Stortinget
     document: regnskapsloven
-    paragraph: "§ 6-2 D III 8"
+    paragraph: "§ 6-2 D III 7"
     applicable_from_fiscal_year: 1999
 
 definitions:
   - lang: nb
     role: definition
-    text: "D. Gjeld / III."
+    text: "D. Gjeld — III. Kortsiktig gjeld"
     source_publisher: Stortinget
     source_document: regnskapsloven
-    source_paragraph: "§ 6-2 D III 8"
+    source_paragraph: "§ 6-2 D III 7"
     applicable_from_fiscal_year: 1999
     authoritative: true
 
@@ -42,9 +42,9 @@ parents:
   - role: "[620000] Balanse"
     parent: regnskap-no:KortsiktigGjeld
     weight: +1
-    order: 8
+    order: 7
 ---
 
-## Verbatim text (regnskapsloven § 6-2 D III 8)
+## Verbatim text (regnskapsloven § 6-2 D III 7)
 
 > Annen kortsiktig gjeld

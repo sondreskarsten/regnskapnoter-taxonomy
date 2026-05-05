@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "B. Omløpsmidler / IV."
+    text: "B. Omløpsmidler"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 B IV"

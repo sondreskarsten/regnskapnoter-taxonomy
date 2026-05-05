@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "C. Egenkapital / II."
+    text: "C. Egenkapital — II. Opptjent egenkapital — 2. Annen egenkapital"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 C II 2"

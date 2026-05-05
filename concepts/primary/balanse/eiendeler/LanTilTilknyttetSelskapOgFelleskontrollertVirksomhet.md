@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "A. Anleggsmidler / III."
+    text: "A. Anleggsmidler — III. Finansielle anleggsmidler — 5. Lån til tilknyttet selskap og felles kontrollert virksomhet"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 A III 5"

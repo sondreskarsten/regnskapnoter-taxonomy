@@ -21,6 +21,16 @@ references:
     document: regnskapsloven
     paragraph: "§ 7-41"
     applicable_from_fiscal_year: 1999
+definitions:
+  - lang: nb
+    role: definition
+    text: "Ekstraordinære inntekter og kostnader Det skal opplyses om størrelsen og arten av ekstraordinære inntekter og kostnader."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-41"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

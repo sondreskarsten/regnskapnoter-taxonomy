@@ -21,6 +21,16 @@ references:
     document: regnskapsloven
     paragraph: "§ 7-35"
     applicable_from_fiscal_year: 1999
+definitions:
+  - lang: nb
+    role: definition
+    text: "Regnskapsprinsipper m.v. (1) Det skal gis opplysninger om anvendte regnskapsprinsipper. (2) Det skal opplyses om sammenligningstallene er omarbeidet. Dersom de omarbeides skal omarbeidingen forklares, jf. § 6-6 ."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-35"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:DisclosureOfNotesAndOtherExplanatoryInformationExplanatory
     relation: skos:closeMatch

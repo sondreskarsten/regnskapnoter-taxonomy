@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-7"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Sammenslåing av poster i oppstillingsplanen (1) Poster i oppstillingsplanen som er slått sammen etter § 6-3 annet ledd, skal spesifiseres. (2) § 6-6 om sammenligningstall gjelder tilsvarende."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-7"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:RevenueFromContractsWithCustomers
     relation: skos:closeMatch

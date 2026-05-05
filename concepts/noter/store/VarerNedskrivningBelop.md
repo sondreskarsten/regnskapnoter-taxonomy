@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-10"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Varer Varer skal spesifiseres på råvarer, varer under tilvirkning og ferdigvarer. § 6-6 om sammenligningstall gjelder tilsvarende."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-10"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:WritedownsReversalsOfInventories
     relation: skos:closeMatch

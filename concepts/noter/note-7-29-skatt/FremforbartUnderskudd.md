@@ -22,6 +22,16 @@ references:
     document: skatteloven
     paragraph: "§ 14-6"
     applicable_from_fiscal_year: 1999
+definitions:
+  - lang: nb
+    role: definition
+    text: "Skatteloven § 14-6 — Underskudd: Underskudd ved virksomhet kan kreves fradratt i skattyterens inntekt i senere år. Underskuddet skal fradras så langt det er skattepliktig inntekt, og skal anvendes uten unødig opphold. Underskudd faller ikke bort etter en bestemt tidsfrist."
+    source_publisher: Stortinget
+    source_document: skatteloven
+    source_paragraph: "§ 14-6"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:UnusedTaxLossesForWhichNoDeferredTaxAssetRecognised
     relation: skos:closeMatch

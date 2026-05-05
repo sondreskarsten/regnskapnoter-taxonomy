@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-3"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Virkning av endring av regnskapsprinsipp m.v. Det skal opplyses om virkningen av endring av regnskapsprinsipp. Det samme gjelder feil i tidligere årsregnskap og korrigering av slike feil, samt omklassifiseringer. Sammenligningstall og omarbeiding av disse skal forklares."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-3"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: ifrs-full:IncreaseDecreaseDueToChangesInAccountingPolicyAndCorrectionsOfPriorPeriodErrorsRetainedEarnings
     relation: skos:closeMatch

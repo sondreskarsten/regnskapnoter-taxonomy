@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "C. Egenkapital / II."
+    text: "C. Egenkapital — II. Opptjent egenkapital — 1. Fond"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 C II 1"

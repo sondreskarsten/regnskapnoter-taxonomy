@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "B. Omløpsmidler / III."
+    text: "B. Omløpsmidler — III. Investeringer — 1. Aksjer og andeler i foretak i samme konsern"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 B III 1"

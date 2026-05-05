@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-11"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Lønnskostnader Lønnskostnader skal spesifiseres på lønninger, folketrygdavgift, pensjonskostnader og andre ytelser. § 6-6 om sammenligningstall gjelder tilsvarende. Det skal opplyses om beregning av pensjonskostnader og pensjonsforpliktelser."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-11"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

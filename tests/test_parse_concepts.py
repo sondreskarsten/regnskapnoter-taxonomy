@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from build.parse_concepts import load_all, load_concepts, load_axes, parse_markdown_file
+from build.parse_concepts import load_all, load_axes, load_concepts, parse_markdown_file
 
 
 def test_load_all_returns_parse_result():

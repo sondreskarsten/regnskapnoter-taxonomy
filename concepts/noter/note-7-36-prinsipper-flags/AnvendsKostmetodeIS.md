@@ -21,6 +21,16 @@ references:
     document: NRS 8
     paragraph: "kap. 4"
     applicable_from_fiscal_year: 2010
+definitions:
+  - lang: nb
+    role: definition
+    text: "4. Endring i beholdning av egentilvirkede anleggsmidler 5. Varekostnad"
+    source_publisher: NRS
+    source_document: NRS 8
+    source_paragraph: "kap. 4"
+    applicable_from_fiscal_year: 2010
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

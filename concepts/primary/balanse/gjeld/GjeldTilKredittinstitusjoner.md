@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "D. Gjeld / II."
+    text: "D. Gjeld — II. Annen langsiktig gjeld — 3. Gjeld til kredittinstitusjoner"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 D II 3"

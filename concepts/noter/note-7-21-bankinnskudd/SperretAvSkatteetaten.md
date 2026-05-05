@@ -21,6 +21,16 @@ references:
     document: skattebetalingsloven
     paragraph: "§ 14-11"
     applicable_from_fiscal_year: 2009
+definitions:
+  - lang: nb
+    role: definition
+    text: "Skattebetalingsloven § 14-11 — Forhåndsvarsel og umiddelbart tvangsoppgjør: Skatteetaten kan i særlige tilfeller vedta tiltak som sperrer eller fryser betalingsmidler for å sikre skatte- og avgiftskrav."
+    source_publisher: Stortinget
+    source_document: skattebetalingsloven
+    source_paragraph: "§ 14-11"
+    applicable_from_fiscal_year: 2009
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

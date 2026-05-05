@@ -22,6 +22,16 @@ references:
     document: skatteloven
     paragraph: "§ 16-40"
     applicable_from_fiscal_year: 2002
+definitions:
+  - lang: nb
+    role: definition
+    text: "Skatteloven § 16-40 — Fradrag i skatt for kostnader til forskning og utvikling (SkatteFUNN): Skattyter som driver virksomhet, gis fradrag i skatt og trygdeavgift for kostnader til forsknings- og utviklingsprosjekt etter bestemmelsene i denne paragraf. Forskningsrådet skal forhåndsgodkjenne prosjektet for at fradrag skal innrømmes."
+    source_publisher: Stortinget
+    source_document: skatteloven
+    source_paragraph: "§ 16-40"
+    applicable_from_fiscal_year: 2002
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

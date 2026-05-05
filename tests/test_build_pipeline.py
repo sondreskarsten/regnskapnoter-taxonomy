@@ -8,7 +8,7 @@ import pyarrow.parquet as pq
 import pytest
 
 from build.build_parquet import build_all
-from build.parse_concepts import REPO_ROOT, load_axes, load_concepts
+from build.parse_concepts import load_axes, load_concepts
 from build.validate_jsonschema import validate_axes as v_axes
 from build.validate_jsonschema import validate_concepts as v_concepts
 from build.validate_referential import _violations
@@ -59,22 +59,20 @@ def test_monetary_concepts_have_balance():
     for c in load_concepts():
         fm = c.front_matter
         if fm["data_type"] == "monetaryItemType":
-            assert fm.get("balance") in ("debit", "credit"), (
-                f"{c.path}: monetary concept missing balance"
-            )
+            assert fm.get("balance") in ("debit", "credit"), f"{c.path}: monetary concept missing balance"
 
 
 def test_every_concept_has_norwegian_label():
     for c in load_concepts():
         labs = c.front_matter.get("labels") or []
-        nb_std = [l for l in labs if l["lang"] == "nb" and l["role"] == "standardLabel"]
+        nb_std = [lab for lab in labs if lab["lang"] == "nb" and lab["role"] == "standardLabel"]
         assert len(nb_std) >= 1, f"{c.path}: missing Norwegian standardLabel"
 
 
 def test_every_concept_has_english_label():
     for c in load_concepts():
         labs = c.front_matter.get("labels") or []
-        en_std = [l for l in labs if l["lang"] == "en" and l["role"] == "standardLabel"]
+        en_std = [lab for lab in labs if lab["lang"] == "en" and lab["role"] == "standardLabel"]
         assert len(en_std) >= 1, f"{c.path}: missing English standardLabel"
 
 

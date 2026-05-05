@@ -22,6 +22,16 @@ references:
     document: regnskapsloven
     paragraph: "§ 7-43"
     applicable_from_fiscal_year: 1999
+definitions:
+  - lang: nb
+    role: definition
+    text: "Antall ansatte Det skal opplyses om antall årsverk som den regnskapspliktige har sysselsatt i regnskapsåret."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-43"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

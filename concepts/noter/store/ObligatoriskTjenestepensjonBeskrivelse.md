@@ -23,6 +23,16 @@ references:
     paragraph: "§ 7-30a"
     applicable_from_fiscal_year: 1999
 
+definitions:
+  - lang: nb
+    role: definition
+    text: "Obligatorisk tjenestepensjon Det skal opplyses om foretaket er pliktig til å ha tjenestepensjonsordning etter lov om obligatorisk tjenestepensjon og om foretaket har pensjonsordning som oppfyller kravene etter denne loven."
+    source_publisher: Stortinget
+    source_document: regnskapsloven
+    source_paragraph: "§ 7-30a"
+    applicable_from_fiscal_year: 1999
+    authoritative: true
+
 mappings:
   - to: null
     relation: null

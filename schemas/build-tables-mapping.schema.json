@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://regnskapnoter-taxonomy/schemas/build-tables-mapping.schema.json",
+  "title": "build_tables Column Mapping (CSV)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["table", "column", "concept_id"],
+    "additionalProperties": false,
+    "properties": {
+      "table": { "type": "string", "minLength": 1 },
+      "column": { "type": "string", "minLength": 1 },
+      "concept_id": { "type": "string", "pattern": "^regnskap-no:[A-Z][A-Za-z0-9]+$" },
+      "axis_id": { "type": ["string", "null"], "pattern": "^(regnskap-no:[A-Z][A-Za-z0-9]+Axis)?$" },
+      "axis_member": { "type": ["string", "null"], "pattern": "^(regnskap-no:[A-Z][A-Za-z0-9]+Member)?$" },
+      "notes": { "type": ["string", "null"] }
+    }
+  }
+}

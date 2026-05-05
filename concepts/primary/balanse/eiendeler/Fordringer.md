@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "B. Omløpsmidler / II."
+    text: "B. Omløpsmidler — II. Fordringer"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 B II"

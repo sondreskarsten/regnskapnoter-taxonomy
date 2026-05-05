@@ -26,7 +26,7 @@ references:
 definitions:
   - lang: nb
     role: definition
-    text: "D. Gjeld / III."
+    text: "D. Gjeld — III. Kortsiktig gjeld — 3. Gjeld til kredittinstitusjoner"
     source_publisher: Stortinget
     source_document: regnskapsloven
     source_paragraph: "§ 6-2 D III 3"
