@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://regnskapnoter-taxonomy/schemas/axis-frontmatter.schema.json",
+  "title": "regnskap-no Axis Front-Matter",
+  "type": "object",
+  "required": [
+    "axis_id",
+    "namespace",
+    "axis_kind",
+    "status",
+    "introduced_version",
+    "labels",
+    "members"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "axis_id": {
+      "type": "string",
+      "pattern": "^regnskap-no:[A-Z][A-Za-z0-9]+Axis$"
+    },
+    "namespace": { "type": "string", "enum": ["regnskap-no"] },
+    "axis_kind": { "type": "string", "enum": ["explicit", "typed"] },
+    "typed_datatype": { "type": ["string", "null"] },
+    "default_member": { "type": ["string", "null"] },
+    "status": { "type": "string", "enum": ["candidate", "standard", "deprecated", "retired"] },
+    "introduced_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "deprecated_date": { "type": ["string", "null"], "format": "date" },
+    "labels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["lang", "role", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "lang": { "type": "string", "enum": ["nb", "en"] },
+          "role": { "type": "string" },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["to", "relation"],
+        "additionalProperties": false,
+        "properties": {
+          "to": { "type": ["string", "null"] },
+          "relation": { "type": ["string", "null"] },
+          "quality": { "type": "string", "enum": ["exact", "approximate", "norwegian_specific"] },
+          "note": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "members": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "labels"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^regnskap-no:[A-Z][A-Za-z0-9]+Member$" },
+          "parent": { "type": ["string", "null"] },
+          "order": { "type": "integer", "minimum": 1 },
+          "usable": { "type": "boolean" },
+          "status": { "type": "string", "enum": ["candidate", "standard", "deprecated", "retired"] },
+          "labels": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["lang", "role", "text"],
+              "additionalProperties": false,
+              "properties": {
+                "lang": { "type": "string", "enum": ["nb", "en"] },
+                "role": { "type": "string" },
+                "text": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "mapping": {
+            "type": "object",
+            "required": ["to", "relation"],
+            "additionalProperties": false,
+            "properties": {
+              "to": { "type": ["string", "null"] },
+              "relation": { "type": ["string", "null"] },
+              "quality": { "type": ["string", "null"] },
+              "note": { "type": ["string", "null"] }
+            }
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["publisher", "document", "paragraph"],
+              "additionalProperties": false,
+              "properties": {
+                "publisher": { "type": "string" },
+                "document": { "type": "string" },
+                "paragraph": { "type": "string" },
+                "version": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

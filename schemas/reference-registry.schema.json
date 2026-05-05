@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://regnskapnoter-taxonomy/schemas/reference-registry.schema.json",
+  "title": "Reference Registry (NRS standards / regnskapsloven / forskrift)",
+  "type": "object",
+  "patternProperties": {
+    "^[a-z0-9-]+$": {
+      "type": "object",
+      "required": ["title", "versions"],
+      "additionalProperties": true,
+      "properties": {
+        "title": { "type": "string" },
+        "is_central_for_sme": { "type": "boolean" },
+        "publisher": { "type": "string" },
+        "versions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["version", "effective_from_fiscal_year"],
+            "additionalProperties": true,
+            "properties": {
+              "version": { "type": "string" },
+              "published": { "type": ["string", "null"], "format": "date" },
+              "effective_from_fiscal_year": { "type": "integer", "minimum": 1900 },
+              "effective_to_fiscal_year": { "type": ["integer", "null"], "minimum": 1900 },
+              "gcs_pdf_path": { "type": ["string", "null"] },
+              "change_summary": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    }
+  }
+}

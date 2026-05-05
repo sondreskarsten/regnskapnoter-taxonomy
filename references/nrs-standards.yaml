@@ -1,0 +1,588 @@
+# NRS Standards version applicability catalog.
+# Generated from gs://sondre_brreg_data/raw/regnskapsstandarder/version_applicability_catalog.json
+
+nrs-1:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Varer
+  versions:
+  - change_summary: Anbefaling til god regnskapsskikk nr. 5
+    effective_from_fiscal_year: 1979
+    effective_to_fiscal_year: 1984
+    version: '1979'
+  - effective_from_fiscal_year: 1985
+    effective_to_fiscal_year: 1990
+    version: '1984'
+  - effective_from_fiscal_year: 1991
+    effective_to_fiscal_year: 1992
+    version: '1990'
+  - effective_from_fiscal_year: 1993
+    effective_to_fiscal_year: 1998
+    version: 1992-10
+  - effective_from_fiscal_year: 1999
+    effective_to_fiscal_year: 2009
+    version: '1998'
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2022
+    version: 2009-09
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrs-11:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Delarsregnskap
+  versions:
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2007
+    version: '2002'
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2010
+    version: '2008'
+  - change_summary: Opphevet 2011 — interim status
+    effective_from_fiscal_year: 2011
+    effective_to_fiscal_year: 2021
+    version: '2011'
+  - change_summary: current — applies to FY 2022+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-01
+nrs-12:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Avvikling og avhendelse
+  versions:
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2008
+    version: '2002'
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2020
+    version: '2009'
+  - change_summary: current — applies to FY 2020+
+    effective_from_fiscal_year: 2020
+    effective_to_fiscal_year: null
+    version: 2020-02
+nrs-13:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Usikre forpliktelser og betingede eiendeler
+  versions:
+  - effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2007
+    version: '2003'
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2013
+    version: '2008'
+  - effective_from_fiscal_year: 2013
+    effective_to_fiscal_year: 2022
+    version: 2013-12
+  - change_summary: Operative for FY 2024 sample
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: 2024
+    version: '2022'
+  - change_summary: current — minor reference updates only
+    effective_from_fiscal_year: 2025
+    effective_to_fiscal_year: null
+    version: 2025-01
+nrs-14:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Leieavtaler
+  versions:
+  - change_summary: First NRS(F)
+    effective_from_fiscal_year: 2000
+    effective_to_fiscal_year: 2002
+    version: 2000-10
+  - effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2007
+    version: '2003'
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2007
+    version: 2007-08
+  - change_summary: current — applies to FY 2008+
+    effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: null
+    version: '2008'
+nrs-15a:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Aksjebasert betaling
+  versions:
+  - effective_from_fiscal_year: 2005
+    effective_to_fiscal_year: 2008
+    version: 2005-11
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2010
+    version: '2009'
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2020
+    version: 2010-03
+  - change_summary: Operative for FY 2024 sample
+    effective_from_fiscal_year: 2020
+    effective_to_fiscal_year: 2024
+    version: '2020'
+  - change_summary: current — minor reference updates only
+    effective_from_fiscal_year: 2025
+    effective_to_fiscal_year: null
+    version: 2025-01
+nrs-16:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Arsberetning
+  versions:
+  - change_summary: First NRS(F)
+    effective_from_fiscal_year: 1999
+    effective_to_fiscal_year: 2006
+    version: 1999-11
+  - effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: 2007
+    version: 2006-09
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2007
+    version: 2007-09
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2010
+    version: '2008'
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2011
+    version: '2010'
+  - effective_from_fiscal_year: 2012
+    effective_to_fiscal_year: 2013
+    version: 2011-12
+  - effective_from_fiscal_year: 2014
+    effective_to_fiscal_year: 2018
+    version: '2013'
+  - effective_from_fiscal_year: 2018
+    effective_to_fiscal_year: 2019
+    version: 2018-02
+  - effective_from_fiscal_year: 2019
+    effective_to_fiscal_year: 2023
+    version: 2019-09
+  - change_summary: Operative for FY 2024 sample
+    effective_from_fiscal_year: 2023
+    effective_to_fiscal_year: 2024
+    version: 2023-10
+  - change_summary: current — substantial CSRD-related changes
+    effective_from_fiscal_year: 2025
+    effective_to_fiscal_year: null
+    version: 2025-01
+nrs-17:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Virksomhetskjop og konsernregnskap
+  versions:
+  - change_summary: First NRS(F) Konsernregnskap
+    effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2005
+    version: '2003'
+  - effective_from_fiscal_year: 2005
+    effective_to_fiscal_year: 2006
+    version: 2005-11
+  - effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: 2007
+    version: 2006-11
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2009
+    version: 2007-08
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2010
+    version: '2009'
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2011
+    version: 2010-03
+  - effective_from_fiscal_year: 2011
+    effective_to_fiscal_year: 2022
+    version: 2011-12
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrs-18:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Finansielle eiendeler og forpliktelser
+  versions:
+  - change_summary: First NRS(D) Finansielle instrumenter
+    effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2009
+    version: '2002'
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2011
+    version: 2009-10
+  - effective_from_fiscal_year: 2011
+    effective_to_fiscal_year: 2018
+    version: 2011-12
+  - effective_from_fiscal_year: 2018
+    effective_to_fiscal_year: 2022
+    version: 2018-12
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrs-19:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Immaterielle eiendeler
+  versions:
+  - change_summary: First NRS(F)
+    effective_from_fiscal_year: 2000
+    effective_to_fiscal_year: 2002
+    version: 2000-11
+  - effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2012
+    version: '2003'
+  - effective_from_fiscal_year: 2012
+    effective_to_fiscal_year: 2022
+    version: 2012-12
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrs-2:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Anleggskontrakter
+  versions:
+  - change_summary: Anbefaling nr. 5 (predecessor)
+    effective_from_fiscal_year: 1979
+    effective_to_fiscal_year: 1984
+    version: '1979'
+  - effective_from_fiscal_year: 1985
+    effective_to_fiscal_year: 1992
+    version: '1990'
+  - effective_from_fiscal_year: 1992
+    effective_to_fiscal_year: 2000
+    version: 1992-10
+  - effective_from_fiscal_year: 2000
+    effective_to_fiscal_year: 2001
+    version: 2000-11
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2007
+    version: '2001'
+  - change_summary: current — applies to FY 2008+
+    effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: null
+    version: '2008'
+nrs-20:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Transaksjoner og regnskap i utenlandsk valuta
+  versions:
+  - change_summary: Anbefaling 11 (predecessor)
+    effective_from_fiscal_year: 1983
+    effective_to_fiscal_year: 2009
+    version: '1983'
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2012
+    version: '2010'
+  - change_summary: current — applies to FY 2013+
+    effective_from_fiscal_year: 2012
+    effective_to_fiscal_year: null
+    version: 2012-12
+nrs-21:
+  is_central_for_sme: false
+  publisher: NRS
+  title: God regnskapsskikk for foretak med begrenset regnskapsplikt
+  versions:
+  - change_summary: current — applies to FY 2019+
+    effective_from_fiscal_year: 2019
+    effective_to_fiscal_year: null
+    version: 2019-09
+nrs-3:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Hendelser etter balansedagen
+  versions:
+  - effective_from_fiscal_year: 1992
+    effective_to_fiscal_year: 1999
+    version: '1992'
+  - effective_from_fiscal_year: 2000
+    effective_to_fiscal_year: 2002
+    version: '2000'
+  - effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2007
+    version: '2003'
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2007
+    version: 2007-08
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2013
+    version: '2008'
+  - effective_from_fiscal_year: 2014
+    effective_to_fiscal_year: 2022
+    version: '2014'
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrs-4:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Offentlige tilskudd
+  versions:
+  - effective_from_fiscal_year: 1996
+    effective_to_fiscal_year: 2007
+    version: '1996'
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2020
+    version: '2008'
+  - change_summary: current — applies to FY 2020+
+    effective_from_fiscal_year: 2020
+    effective_to_fiscal_year: null
+    version: 2020-02
+nrs-5:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Spesifikasjon av saerlige poster mv (formerly Ekstraordinaere poster)
+  versions:
+  - effective_from_fiscal_year: 1989
+    effective_to_fiscal_year: 1999
+    version: '1989'
+  - effective_from_fiscal_year: 2000
+    effective_to_fiscal_year: 2000
+    version: '2000'
+  - effective_from_fiscal_year: 2001
+    effective_to_fiscal_year: 2009
+    version: '2001'
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2022
+    version: 2009-09
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrs-6:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Pensjonskostnader
+  versions:
+  - change_summary: First NRS(F) version
+    effective_from_fiscal_year: 1995
+    effective_to_fiscal_year: 2002
+    version: '1995'
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2005
+    version: 2002-11
+  - effective_from_fiscal_year: 2005
+    effective_to_fiscal_year: 2007
+    version: 2005-11
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2008
+    version: 2007-11
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2009
+    version: '2008'
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2010
+    version: 2009-12
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2012
+    version: 2010-12
+  - effective_from_fiscal_year: 2012
+    effective_to_fiscal_year: 2013
+    version: 2012-12
+  - effective_from_fiscal_year: 2014
+    effective_to_fiscal_year: 2019
+    version: '2014'
+  - change_summary: current — applies to FY 2019+
+    effective_from_fiscal_year: 2019
+    effective_to_fiscal_year: null
+    version: 2019-11
+nrs-8:
+  is_central_for_sme: true
+  publisher: NRS
+  title: God regnskapsskikk for sma foretak
+  versions:
+  - change_summary: First NRS(F)
+    effective_from_fiscal_year: 1999
+    effective_to_fiscal_year: 2002
+    version: 1999-11
+  - effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2003
+    version: '2002'
+  - effective_from_fiscal_year: 2004
+    effective_to_fiscal_year: 2004
+    version: '2003'
+  - effective_from_fiscal_year: 2004
+    effective_to_fiscal_year: 2005
+    version: 2004-11
+  - effective_from_fiscal_year: 2005
+    effective_to_fiscal_year: 2006
+    version: 2005-11
+  - effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: 2009
+    version: 2006-10
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2010
+    version: 2009-06
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2013
+    version: 2010-10
+  - effective_from_fiscal_year: 2013
+    effective_to_fiscal_year: 2013
+    version: 2013-09
+  - effective_from_fiscal_year: 2014
+    effective_to_fiscal_year: 2018
+    version: 2014-01
+  - effective_from_fiscal_year: 2018
+    effective_to_fiscal_year: 2021
+    version: 2018-02
+  - effective_from_fiscal_year: 2021
+    effective_to_fiscal_year: 2021
+    version: 2021-12
+  - effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: 2023
+    version: 2022-01
+  - change_summary: Operative for FY 2024 sample
+    effective_from_fiscal_year: 2023
+    effective_to_fiscal_year: 2025
+    version: 2023-10
+  - change_summary: current — applies to FY 2026+
+    effective_from_fiscal_year: 2026
+    effective_to_fiscal_year: null
+    version: 2025-12
+nrs-9:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Fusjon
+  versions:
+  - change_summary: First NRS
+    effective_from_fiscal_year: 1999
+    effective_to_fiscal_year: 2002
+    version: '1999'
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2003
+    version: 2002-10
+  - effective_from_fiscal_year: 2004
+    effective_to_fiscal_year: 2004
+    version: '2003'
+  - effective_from_fiscal_year: 2004
+    effective_to_fiscal_year: 2006
+    version: 2004-12
+  - effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: 2009
+    version: 2006-11
+  - effective_from_fiscal_year: 2010
+    effective_to_fiscal_year: 2013
+    version: '2009'
+  - change_summary: current — applies to FY 2014+
+    effective_from_fiscal_year: 2013
+    effective_to_fiscal_year: null
+    version: 2013-12
+nrsf-fisjon:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Fisjon
+  versions:
+  - effective_from_fiscal_year: 2003
+    effective_to_fiscal_year: 2003
+    version: '2003'
+  - effective_from_fiscal_year: 2004
+    effective_to_fiscal_year: 2006
+    version: '2004'
+  - change_summary: current — applies to FY 2007+
+    effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: null
+    version: 2006-11
+nrsf-grs-ideelle-organisasjoner:
+  is_central_for_sme: false
+  publisher: NRS
+  title: God regnskapsskikk for ideelle organisasjoner
+  versions:
+  - effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: 2007
+    version: 2006-09
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2017
+    version: '2008'
+  - effective_from_fiscal_year: 2018
+    effective_to_fiscal_year: 2019
+    version: 2018-03
+  - change_summary: current — applies to FY 2020+
+    effective_from_fiscal_year: 2020
+    effective_to_fiscal_year: null
+    version: 2020-01
+nrsf-investering-i-tilknyttet-selskap:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Investering i tilknyttet selskap og deltakelse i FKV
+  versions:
+  - effective_from_fiscal_year: 1999
+    effective_to_fiscal_year: 2001
+    version: '1999'
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2005
+    version: '2002'
+  - effective_from_fiscal_year: 2006
+    effective_to_fiscal_year: 2007
+    version: '2006'
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2007
+    version: '2007'
+  - change_summary: current — applies to FY 2008+
+    effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: null
+    version: '2008'
+nrsf-kontantstromoppstilling:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Kontantstromoppstilling
+  versions:
+  - change_summary: Finansieringsanalyse 1978
+    effective_from_fiscal_year: 1978
+    effective_to_fiscal_year: 1987
+    version: '1978'
+  - change_summary: Finansieringsanalyse revidert 1988
+    effective_from_fiscal_year: 1988
+    effective_to_fiscal_year: 1994
+    version: '1988'
+  - change_summary: First NRS(F)
+    effective_from_fiscal_year: 1995
+    effective_to_fiscal_year: 2007
+    version: '1995'
+  - effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: 2011
+    version: '2008'
+  - change_summary: Operative for FY 2024 sample
+    effective_from_fiscal_year: 2011
+    effective_to_fiscal_year: 2024
+    version: 2011-12
+  - change_summary: current — minor reference updates only
+    effective_from_fiscal_year: 2025
+    effective_to_fiscal_year: null
+    version: 2025-01
+nrsf-nedskrivning:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Nedskrivning av anleggsmidler
+  versions:
+  - effective_from_fiscal_year: 2002
+    effective_to_fiscal_year: 2007
+    version: '2002'
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2008
+    version: 2007-08
+  - effective_from_fiscal_year: 2009
+    effective_to_fiscal_year: 2022
+    version: '2009'
+  - change_summary: current — applies to FY 2023+
+    effective_from_fiscal_year: 2022
+    effective_to_fiscal_year: null
+    version: 2022-12
+nrsf-resultatskatt:
+  is_central_for_sme: false
+  publisher: NRS
+  title: Resultatskatt
+  versions:
+  - change_summary: First NRS(F)
+    effective_from_fiscal_year: 1999
+    effective_to_fiscal_year: 2007
+    version: '1999'
+  - effective_from_fiscal_year: 2007
+    effective_to_fiscal_year: 2007
+    version: 2007-08
+  - change_summary: current — applies to FY 2008+
+    effective_from_fiscal_year: 2008
+    effective_to_fiscal_year: null
+    version: '2008'

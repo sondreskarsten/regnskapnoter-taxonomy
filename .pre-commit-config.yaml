@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: validate-jsonschema
+        name: Validate concept and axis front-matter
+        entry: python -m build.validate_jsonschema
+        language: system
+        files: ^(concepts|axes)/.*\.md$
+        pass_filenames: false
+
+      - id: validate-referential
+        name: Validate cross-file referential integrity
+        entry: python -m build.validate_referential
+        language: system
+        files: ^(concepts|axes|references|mappings)/
+        pass_filenames: false
+
+      - id: forbid-concept-id-rename
+        name: Forbid concept_id renames
+        entry: python -m build.check_no_renames
+        language: system
+        files: ^(concepts|axes)/.*\.md$
+        pass_filenames: false
