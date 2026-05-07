@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-05-07
+
+### Added
+- **35 new concepts** covering 24 previously missing kapittel 7 sections (§§ 7-1, 7-1a, 7-2a, 7-4, 7-6, 7-7a, 7-7b, 7-8b, 7-11a, 7-13, 7-14, 7-16, 7-18, 7-19, 7-20, 7-22, 7-24, 7-25, 7-27, 7-28, 7-31, 7-31b, 7-34, 7-37a).
+- Kapittel 7 coverage: 33/58 → 57/58 sections (only § 7-43a [opphevet] excluded).
+- New concept directories: `note-7-1-opplysningsplikt`, `note-7-1a-rekkefolge`, `note-7-2a-valuta`, `note-7-4-konsernsammensetning`, `note-7-6-enkelttransaksjoner`, `note-7-7a-bruttopresentasjon`, `note-7-7b-hendelser-etter-balansedagen`, `note-7-8b-driftskostnader-art`, `note-7-11a-aksjebasert-betaling`, `note-7-13-varige-driftsmidler`, `note-7-14-immaterielle`, `note-7-16-egenkapitalmetoden`, `note-7-18-aksjer-andeler`, `note-7-19-fordringer`, `note-7-20-obligasjoner`, `note-7-22-konsern-mellomvaerende`, `note-7-24-ekstraordinaere`, `note-7-25-egenkapital`, `note-7-27-egne-aksjer`, `note-7-28-garantiforpliktelser`, `note-7-31-ytelser-ledende`, `note-7-31b-ytelser-ledende-pie`, `note-7-34-utvinning`, `note-7-37a-finansielle-derivater`.
+- Definition texts sourced from `sondreskarsten/norwegian-laws` at tag `v2024` (PIT-versioned).
+- IFRS mappings for 24 of 35 new concepts (where applicable IAS/IFRS standard exists).
+- Concepts cover both IFRS-exempt sections (14) and sections surviving under IFRS (11).
+
+### Context
+Gap discovered via cross-reference against WebRodent/clario-reimagined årsoppgjør task types. All small-firm notes (§§ 7-35–7-46) were already covered; gaps were in §§ 7-2–7-34 (not obligatory for small firms). Root cause: accidental omission from corpus-driven bottom-up build, not a scoping decision.
+
+
+
 ## [1.0.3] - 2026-05-05
 
 ### Added
